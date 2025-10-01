@@ -1,13 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Shield, Lock, AlertTriangle, CheckCircle } from "lucide-react";
-
 const AntiTheftLock = () => {
   const whatsappNumber = "5511999999999";
   const whatsappMessage = encodeURIComponent("Olá! Gostaria de saber mais sobre a trava automática antiarrombamento.");
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
-
-  return (
-    <section className="py-20 bg-foreground text-background">
+  return <section className="py-20 bg-foreground text-background">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           {/* Content */}
@@ -27,43 +24,30 @@ const AntiTheftLock = () => {
             </p>
 
             <div className="space-y-4 mb-8">
-              {[
-                {
-                  icon: Lock,
-                  text: "Trava eletromecânica de alta resistência"
-                },
-                {
-                  icon: Shield,
-                  text: "Impede abertura manual forçada"
-                },
-                {
-                  icon: AlertTriangle,
-                  text: "Proteção mesmo em falta de energia"
-                },
-                {
-                  icon: CheckCircle,
-                  text: "Compatível com todos os modelos de motor"
-                }
-              ].map((item, index) => {
-                const Icon = item.icon;
-                return (
-                  <div key={index} className="flex items-start gap-4">
+              {[{
+              icon: Lock,
+              text: "Trava eletromecânica de alta resistência"
+            }, {
+              icon: Shield,
+              text: "Impede abertura manual forçada"
+            }, {
+              icon: AlertTriangle,
+              text: "Proteção mesmo em falta de energia"
+            }, {
+              icon: CheckCircle,
+              text: "Compatível com todos os modelos de motor"
+            }].map((item, index) => {
+              const Icon = item.icon;
+              return <div key={index} className="flex items-start gap-4">
                     <div className="bg-primary/20 p-2 rounded-lg flex-shrink-0">
                       <Icon className="h-5 w-5 text-primary" />
                     </div>
                     <span className="text-lg text-background/90">{item.text}</span>
-                  </div>
-                );
-              })}
+                  </div>;
+            })}
             </div>
 
-            <Button 
-              size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-montserrat font-semibold text-lg px-8 py-6 rounded-xl shadow-[0_20px_50px_-10px_hsl(142_76%_36%/0.4)] transition-all hover:scale-105"
-              onClick={() => window.open(whatsappLink, '_blank')}
-            >
-              Adicionar Trava ao Orçamento
-            </Button>
+            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-montserrat font-semibold text-lg px-8 py-6 rounded-xl shadow-[0_20px_50px_-10px_hsl(142_76%_36%/0.4)] transition-all hover:scale-105" onClick={() => window.open(whatsappLink, '_blank')}>Adicionar Trava ao Orçamento</Button>
           </div>
 
           {/* Visual */}
@@ -93,8 +77,6 @@ const AntiTheftLock = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default AntiTheftLock;

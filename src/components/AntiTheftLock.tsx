@@ -26,13 +26,13 @@ const AntiTheftLock = () => {
             <div className="space-y-4 mb-8">
               {[{
               icon: Lock,
-              text: "Trava eletromecânica de alta resistência"
+              text: "Trava de alta resistência"
             }, {
               icon: Shield,
               text: "Impede abertura manual forçada"
             }, {
               icon: AlertTriangle,
-              text: "Proteção mesmo em falta de energia"
+              text: "Proteção mesmo em queda de energia (acionamento manual)"
             }, {
               icon: CheckCircle,
               text: "Compatível com todos os modelos de motor"
@@ -53,8 +53,12 @@ const AntiTheftLock = () => {
           {/* Visual */}
           <div className="relative">
             <div className="bg-background/10 backdrop-blur-sm rounded-2xl p-8 border border-background/20">
-              <div className="aspect-square bg-primary/20 rounded-xl flex items-center justify-center">
-                <Lock className="h-32 w-32 text-primary" />
+              <div className="aspect-square bg-muted rounded-xl overflow-hidden">
+                <img 
+                  src="/placeholder.svg" 
+                  alt="Trava Automática Antiarrombamento"
+                  className="w-full h-full object-cover"
+                />
               </div>
               
               <div className="mt-6 text-center">

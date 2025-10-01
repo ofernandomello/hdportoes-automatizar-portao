@@ -1,6 +1,10 @@
 import { Star } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Testimonials = () => {
+  const whatsappNumber = "5511999999999";
+  const whatsappMessage = encodeURIComponent("Olá! Vi os depoimentos e quero automatizar meu portão com Motor PPA.");
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
   const testimonials = [
     {
       name: "Carlos Mendes",
@@ -48,7 +52,7 @@ const Testimonials = () => {
             O Que Nossos Clientes Dizem
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Centenas de famílias já automatizaram seus portões conosco
+            Centenas de famílias já automatizaram seus portões com nosso Motor PPA
           </p>
         </div>
 
@@ -99,6 +103,16 @@ const Testimonials = () => {
             <div className="font-montserrat text-4xl font-bold text-primary mb-2">15+</div>
             <div className="text-muted-foreground">Anos de Experiência</div>
           </div>
+        </div>
+
+        <div className="text-center mt-12">
+          <Button 
+            size="lg"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground font-montserrat font-semibold text-lg px-12 py-6 rounded-xl shadow-[0_20px_50px_-10px_hsl(142_76%_36%/0.4)] transition-all hover:scale-105"
+            onClick={() => window.open(whatsappLink, '_blank')}
+          >
+            Quero Esse Resultado
+          </Button>
         </div>
       </div>
     </section>

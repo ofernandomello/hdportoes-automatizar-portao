@@ -1,6 +1,11 @@
 import { Shield, Clock, TrendingUp, Wrench, CheckCircle2, Lock } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const Benefits = () => {
+  const whatsappNumber = "5511999999999";
+  const whatsappMessage = encodeURIComponent("Olá! Quero automatizar meu portão em 4 segundos.");
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
   const benefits = [
     {
       icon: Shield,
@@ -24,13 +29,13 @@ const Benefits = () => {
     },
     {
       icon: CheckCircle2,
-      title: "Garantia Estendida",
-      description: "Garantia de fábrica + suporte técnico dedicado sempre que você precisar."
+      title: "Garantia",
+      description: "Garantia de fábrica + suporte técnico dedicado."
     },
     {
       icon: Lock,
       title: "Proteção Antiarrombamento",
-      description: "Travas automáticas que impedem a abertura forçada do portão."
+      description: "Travas automáticas que impedem a abertura forçada do portão. *Solicitadas separadamente."
     }
   ];
 
@@ -66,6 +71,16 @@ const Benefits = () => {
               </div>
             );
           })}
+        </div>
+
+        <div className="text-center mt-12">
+          <Button 
+            size="lg"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground font-montserrat font-semibold text-lg px-12 py-6 rounded-xl shadow-[0_20px_50px_-10px_hsl(142_76%_36%/0.4)] transition-all hover:scale-105"
+            onClick={() => window.open(whatsappLink, '_blank')}
+          >
+            Automatizar Meu Portão
+          </Button>
         </div>
       </div>
     </section>

@@ -16,12 +16,11 @@ const Hero = () => {
       <div className="container relative z-10 mx-auto px-4 py-20">
         <div className="max-w-2xl">
           <h1 className="font-montserrat text-5xl md:text-6xl lg:text-7xl font-bold text-background mb-6 leading-tight">
-            Automatize Seu Portão com 
-            <span className="text-primary"> Segurança</span> e 
-            <span className="text-primary"> Praticidade</span>
+            Automatizamos seu portão para abrir em 
+            <span className="text-primary"> 4 segundos</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-background/90 mb-8 leading-relaxed">Chegue em casa sem precisar descer do carro. Abertura em 4 segundos, instalação profissional e parcelamento em até 10x sem juros.</p>
+          <p className="text-xl md:text-2xl text-background/90 mb-8 leading-relaxed">Chegue em casa sem precisar descer do carro. Abertura em 4 segundos com Motor PPA Jet Flex, instalação profissional e parcelamento em até 10x sem juros.</p>
 
           {/* Benefits List */}
           <div className="space-y-3 mb-10">
@@ -35,7 +34,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4">
             <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-montserrat font-semibold text-lg px-8 py-6 rounded-xl shadow-[0_20px_50px_-10px_hsl(142_76%_36%/0.4)] transition-all hover:scale-105" onClick={() => window.open(whatsappLink, '_blank')}>
               <Phone className="mr-2 h-5 w-5" />
-              Falar com Especialista
+              Automatizar em 4 Segundos
             </Button>
             
             <Button size="lg" variant="outline" className="bg-background/10 backdrop-blur-sm hover:bg-background/20 text-background border-2 border-background/30 font-montserrat font-semibold text-lg px-8 py-6 rounded-xl transition-all" onClick={() => document.getElementById('motores')?.scrollIntoView({
@@ -55,4 +54,28 @@ const Hero = () => {
       </div>
     </section>;
 };
+
+const VideoSection = () => {
+  return (
+    <section className="py-16 bg-background">
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-8">
+            <h2 className="font-montserrat text-3xl md:text-4xl font-bold text-foreground mb-4">
+              Veja Como Funciona
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Assista nosso motor em ação
+            </p>
+          </div>
+          <div className="aspect-video bg-muted rounded-2xl shadow-lg flex items-center justify-center">
+            <p className="text-muted-foreground">Espaço reservado para vídeo</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 export default Hero;
+export { VideoSection };

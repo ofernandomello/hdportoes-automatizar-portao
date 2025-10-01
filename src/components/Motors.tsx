@@ -6,24 +6,27 @@ const Motors = () => {
   const motors = [{
     name: "Motor Básico",
     subtitle: "Ideal para portões leves",
-    price: "R$ 1.290",
+    price: "A partir de R$ 1.290",
     installments: "ou 10x de R$ 129,00",
     features: ["Portões até 150kg", "Controles remotos inclusos", "Garantia de 12 meses", "Instalação profissional", "Sensor de segurança"],
-    isHighlight: false
+    isHighlight: false,
+    image: "/placeholder.svg"
   }, {
     name: "Motor Premium",
     subtitle: "Mais vendido",
-    price: "R$ 1.890",
+    price: "A partir de R$ 1.890",
     installments: "ou 10x de R$ 189,00",
     features: ["Portões até 300kg", "3 controles remotos inclusos", "Garantia de 24 meses", "Instalação profissional", "Sensor de segurança duplo", "Abertura em 4 segundos", "Sistema anti-esmagamento"],
-    isHighlight: true
+    isHighlight: true,
+    image: "/placeholder.svg"
   }, {
     name: "Motor Industrial",
     subtitle: "Máxima performance",
-    price: "R$ 2.690",
+    price: "A partir de R$ 2.690",
     installments: "ou 10x de R$ 269,00",
     features: ["Portões até 500kg", "4 controles remotos inclusos", "Garantia de 36 meses", "Instalação profissional", "Sistema completo de segurança", "Abertura em 3 segundos", "Motor silencioso", "Automação via smartphone"],
-    isHighlight: false
+    isHighlight: false,
+    image: "/placeholder.svg"
   }];
   const handleWhatsApp = (motorName: string) => {
     const message = encodeURIComponent(`Olá! Tenho interesse no ${motorName}. Gostaria de mais informações.`);
@@ -42,6 +45,16 @@ const Motors = () => {
                   <Star className="h-4 w-4 mr-1 inline" />
                   MAIS VENDIDO
                 </Badge>}
+
+              <div className="mb-6">
+                <div className="aspect-square bg-muted rounded-xl overflow-hidden">
+                  <img 
+                    src={motor.image} 
+                    alt={motor.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
 
               <div className="text-center mb-8">
                 <h3 className="font-montserrat text-2xl font-bold mb-1">

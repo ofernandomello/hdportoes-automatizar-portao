@@ -1,0 +1,132 @@
+import { Button } from "@/components/ui/button";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
+
+const Footer = () => {
+  const whatsappNumber = "5511999999999";
+  const whatsappMessage = encodeURIComponent("Olá! Gostaria de automatizar meu portão.");
+  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+  return (
+    <footer className="bg-foreground text-background">
+      {/* CTA Section */}
+      <div className="border-b border-background/10">
+        <div className="container mx-auto px-4 py-16">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="font-montserrat text-3xl md:text-4xl font-bold mb-6">
+              Pronto Para Automatizar Seu Portão?
+            </h2>
+            <p className="text-xl text-background/80 mb-8">
+              Fale com nossos especialistas agora e receba um orçamento personalizado
+            </p>
+            <Button 
+              size="lg"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-montserrat font-semibold text-lg px-12 py-6 rounded-xl shadow-[0_20px_50px_-10px_hsl(142_76%_36%/0.4)] transition-all hover:scale-105"
+              onClick={() => window.open(whatsappLink, '_blank')}
+            >
+              <Phone className="mr-2 h-5 w-5" />
+              Solicitar Orçamento Grátis
+            </Button>
+          </div>
+        </div>
+      </div>
+
+      {/* Info Section */}
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {/* Contact */}
+          <div>
+            <h3 className="font-montserrat text-xl font-bold mb-4 text-primary">
+              Contato
+            </h3>
+            <div className="space-y-3">
+              <a 
+                href={whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 text-background/80 hover:text-primary transition-colors"
+              >
+                <Phone className="h-5 w-5" />
+                <span>(11) 99999-9999</span>
+              </a>
+              <a 
+                href="mailto:contato@autoportao.com.br"
+                className="flex items-center gap-3 text-background/80 hover:text-primary transition-colors"
+              >
+                <Mail className="h-5 w-5" />
+                <span>contato@autoportao.com.br</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Hours */}
+          <div>
+            <h3 className="font-montserrat text-xl font-bold mb-4 text-primary">
+              Horário de Atendimento
+            </h3>
+            <div className="flex items-start gap-3 text-background/80">
+              <Clock className="h-5 w-5 mt-1 flex-shrink-0" />
+              <div>
+                <p>Segunda a Sexta: 8h às 18h</p>
+                <p>Sábado: 8h às 14h</p>
+                <p>Domingo: WhatsApp 24h</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Service Area */}
+          <div>
+            <h3 className="font-montserrat text-xl font-bold mb-4 text-primary">
+              Área de Atendimento
+            </h3>
+            <div className="flex items-start gap-3 text-background/80">
+              <MapPin className="h-5 w-5 mt-1 flex-shrink-0" />
+              <div>
+                <p>São Paulo Capital</p>
+                <p>Grande São Paulo</p>
+                <p>ABC Paulista</p>
+                <p>Guarulhos e Região</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Services */}
+          <div>
+            <h3 className="font-montserrat text-xl font-bold mb-4 text-primary">
+              Serviços
+            </h3>
+            <ul className="space-y-2 text-background/80">
+              <li>Automatização de Portões</li>
+              <li>Travas Antiarrombamento</li>
+              <li>Manutenção Preventiva</li>
+              <li>Instalação Profissional</li>
+              <li>Suporte Técnico</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      {/* Bottom Bar */}
+      <div className="border-t border-background/10">
+        <div className="container mx-auto px-4 py-6">
+          <div className="text-center text-background/60 text-sm">
+            <p>© {new Date().getFullYear()} AutoPortão. Todos os direitos reservados.</p>
+            <p className="mt-2">CNPJ: 00.000.000/0001-00 | Instalações certificadas e garantidas</p>
+          </div>
+        </div>
+      </div>
+
+      {/* WhatsApp Floating Button */}
+      <a
+        href={whatsappLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-6 right-6 bg-primary hover:bg-primary/90 text-primary-foreground p-4 rounded-full shadow-[0_20px_50px_-10px_hsl(142_76%_36%/0.6)] transition-all hover:scale-110 z-50"
+        aria-label="Falar no WhatsApp"
+      >
+        <Phone className="h-6 w-6" />
+      </a>
+    </footer>
+  );
+};
+
+export default Footer;

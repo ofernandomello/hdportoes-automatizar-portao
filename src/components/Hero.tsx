@@ -17,7 +17,8 @@ const Hero = () => {
         <div className="max-w-2xl">
           <h1 className="font-montserrat text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-background mb-6 leading-tight">
             Automatizamos seu portão <br className="hidden lg:block" />para abrir em 
-            <span className="text-primary"> 4 segundos</span>
+            <span className="text-primary">
+4 segundos</span>
           </h1>
           
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-background/90 mb-8 leading-relaxed">Chegue em casa sem precisar descer do carro. Abertura em 4 segundos com Motor PPA Jet Flex, instalação profissional e parcelamento em até 10x sem juros.</p>
@@ -54,10 +55,8 @@ const Hero = () => {
       </div>
     </section>;
 };
-
 const VideoSection = () => {
-  return (
-    <section className="py-16 bg-background">
+  return <section className="py-16 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-8">
@@ -73,9 +72,7 @@ const VideoSection = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
-
 export default Hero;
 export { VideoSection };

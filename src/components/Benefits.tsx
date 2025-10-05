@@ -19,8 +19,8 @@ const Benefits = () => {
     },
     {
       icon: TrendingUp,
-      title: "Valorização do Imóvel",
-      description: "Automatização aumenta o valor de mercado da sua residência em até 15%."
+      title: "Preço Direto de Fábrica",
+      description: "Compre diretamente da fábrica sem intermediários. Economia garantida e qualidade certificada."
     },
     {
       icon: Wrench,
@@ -43,10 +43,10 @@ const Benefits = () => {
     <section className="py-20 bg-secondary">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="font-montserrat text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="font-montserrat text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
             Por Que Automatizar Seu Portão?
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
             Transforme sua rotina com mais conforto, segurança e praticidade para toda a família
           </p>
         </div>

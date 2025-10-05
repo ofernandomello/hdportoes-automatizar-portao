@@ -48,10 +48,10 @@ const Testimonials = () => {
     <section className="py-20 bg-secondary">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="font-montserrat text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="font-montserrat text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
             O Que Nossos Clientes Dizem
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
             Centenas de famílias já automatizaram seus portões com nosso Motor PPA
           </p>
         </div>

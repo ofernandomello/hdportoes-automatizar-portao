@@ -3,8 +3,16 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 
-const ContactForm = () => {
+const WhatsAppButton = () => {
+  const [open, setOpen] = useState(false);
   const [formData, setFormData] = useState({
     cidade: "",
     bairro: "",
@@ -42,23 +50,34 @@ const ContactForm = () => {
     );
 
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+    setOpen(false);
   };
 
   return (
-    <section id="formulario" className="py-20 bg-secondary">
-      <div className="container mx-auto px-4">
-        <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="font-montserrat text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Solicite Seu Orçamento
-            </h2>
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground">
-              Preencha o formulário e receba uma proposta personalizada
-            </p>
-          </div>
+    <>
+      <button
+        onClick={() => setOpen(true)}
+        className="fixed bottom-6 right-6 bg-[#25D366] hover:bg-[#20BA5A] text-white p-5 rounded-full shadow-[0_20px_50px_-10px_rgba(37,211,102,0.6)] transition-all hover:scale-110 z-50"
+        aria-label="Solicitar orçamento via WhatsApp"
+      >
+        <svg className="h-8 w-8" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+      </button>
 
-          <form onSubmit={handleSubmit} className="bg-card rounded-2xl p-8 shadow-lg space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle className="font-montserrat text-2xl sm:text-3xl">
+              Solicite Seu Orçamento
+            </DialogTitle>
+            <DialogDescription className="text-base">
+              Preencha o formulário e receba uma proposta personalizada
+            </DialogDescription>
+          </DialogHeader>
+
+          <form onSubmit={handleSubmit} className="space-y-6 mt-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="cidade" className="text-base font-montserrat">
                   Cidade *
@@ -95,17 +114,17 @@ const ContactForm = () => {
               <RadioGroup
                 value={formData.tipo}
                 onValueChange={(value) => setFormData({...formData, tipo: value})}
-                className="space-y-3"
+                className="space-y-2"
               >
-                <div className="flex items-center space-x-3 bg-background/50 p-4 rounded-lg">
-                  <RadioGroupItem value="automatizacao" id="automatizacao" />
-                  <Label htmlFor="automatizacao" className="cursor-pointer flex-1 font-normal">
+                <div className="flex items-center space-x-3 bg-background/50 p-3 rounded-lg">
+                  <RadioGroupItem value="automatizacao" id="popup-automatizacao" />
+                  <Label htmlFor="popup-automatizacao" className="cursor-pointer flex-1 font-normal">
                     Automatização
                   </Label>
                 </div>
-                <div className="flex items-center space-x-3 bg-background/50 p-4 rounded-lg">
-                  <RadioGroupItem value="automatizacao-trava" id="automatizacao-trava" />
-                  <Label htmlFor="automatizacao-trava" className="cursor-pointer flex-1 font-normal">
+                <div className="flex items-center space-x-3 bg-background/50 p-3 rounded-lg">
+                  <RadioGroupItem value="automatizacao-trava" id="popup-automatizacao-trava" />
+                  <Label htmlFor="popup-automatizacao-trava" className="cursor-pointer flex-1 font-normal">
                     Automatização + Trava Automática
                   </Label>
                 </div>
@@ -119,30 +138,30 @@ const ContactForm = () => {
               <RadioGroup
                 value={formData.velocidade}
                 onValueChange={(value) => setFormData({...formData, velocidade: value})}
-                className="space-y-3"
+                className="space-y-2"
               >
-                <div className="flex items-center space-x-3 bg-background/50 p-4 rounded-lg">
-                  <RadioGroupItem value="4s" id="4s" />
-                  <Label htmlFor="4s" className="cursor-pointer flex-1 font-normal">
+                <div className="flex items-center space-x-3 bg-background/50 p-3 rounded-lg">
+                  <RadioGroupItem value="4s" id="popup-4s" />
+                  <Label htmlFor="popup-4s" className="cursor-pointer flex-1 font-normal text-sm sm:text-base">
                     Em até 4s <span className="text-primary font-semibold">(10x a partir de R$ 269)</span>
                   </Label>
                 </div>
-                <div className="flex items-center space-x-3 bg-background/50 p-4 rounded-lg">
-                  <RadioGroupItem value="9s" id="9s" />
-                  <Label htmlFor="9s" className="cursor-pointer flex-1 font-normal">
+                <div className="flex items-center space-x-3 bg-background/50 p-3 rounded-lg">
+                  <RadioGroupItem value="9s" id="popup-9s" />
+                  <Label htmlFor="popup-9s" className="cursor-pointer flex-1 font-normal text-sm sm:text-base">
                     Em até 9s <span className="text-primary font-semibold">(10x a partir de R$ 189)</span>
                   </Label>
                 </div>
-                <div className="flex items-center space-x-3 bg-background/50 p-4 rounded-lg">
-                  <RadioGroupItem value="16s" id="16s" />
-                  <Label htmlFor="16s" className="cursor-pointer flex-1 font-normal">
+                <div className="flex items-center space-x-3 bg-background/50 p-3 rounded-lg">
+                  <RadioGroupItem value="16s" id="popup-16s" />
+                  <Label htmlFor="popup-16s" className="cursor-pointer flex-1 font-normal text-sm sm:text-base">
                     Em até 16s <span className="text-primary font-semibold">(10x a partir de R$ 129)</span>
                   </Label>
                 </div>
               </RadioGroup>
             </div>
 
-            <div className="grid grid-cols-1 gap-6">
+            <div className="grid grid-cols-1 gap-4">
               <div className="space-y-2">
                 <Label htmlFor="nome" className="text-base font-montserrat">
                   Nome Completo *
@@ -196,10 +215,10 @@ const ContactForm = () => {
               Enviar via WhatsApp
             </Button>
           </form>
-        </div>
-      </div>
-    </section>
+        </DialogContent>
+      </Dialog>
+    </>
   );
 };
 
-export default ContactForm;
+export default WhatsAppButton;

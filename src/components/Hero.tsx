@@ -15,18 +15,18 @@ const Hero = () => {
       {/* Content */}
       <div className="container relative z-10 mx-auto px-4 py-20">
         <div className="max-w-2xl">
-          <h1 className="font-montserrat text-5xl md:text-6xl lg:text-7xl font-bold text-background mb-6 leading-tight">
-            Automatizamos seu portão para abrir em 
+          <h1 className="font-montserrat text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-background mb-6 leading-tight">
+            Automatizamos seu portão <br className="hidden lg:block" />para abrir em 
             <span className="text-primary"> 4 segundos</span>
           </h1>
           
-          <p className="text-xl md:text-2xl text-background/90 mb-8 leading-relaxed">Chegue em casa sem precisar descer do carro. Abertura em 4 segundos com Motor PPA Jet Flex, instalação profissional e parcelamento em até 10x sem juros.</p>
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-background/90 mb-8 leading-relaxed">Chegue em casa sem precisar descer do carro. Abertura em 4 segundos com Motor PPA Jet Flex, instalação profissional e parcelamento em até 10x sem juros.</p>
 
           {/* Benefits List */}
           <div className="space-y-3 mb-10">
             {["Abertura em apenas 4 segundos", "Parcelamento em 10x sem juros", "Instalação profissional com garantia", "Aumento da segurança da sua família"].map((benefit, index) => <div key={index} className="flex items-center gap-3">
-                <CheckCircle className="h-6 w-6 text-primary flex-shrink-0" />
-                <span className="text-background text-lg">{benefit}</span>
+                <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 text-primary flex-shrink-0" />
+                <span className="text-background text-sm sm:text-base md:text-lg">{benefit}</span>
               </div>)}
           </div>
 

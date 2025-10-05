@@ -35,8 +35,8 @@ const Motors = () => {
   return <section id="motores" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="font-montserrat text-4xl md:text-5xl font-bold text-foreground mb-4">Escolha o Motor PPA Ideal Para Você</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">Trabalhamos com o Motor PPA, a melhor marca do mercado. Parcelamento em até 10x sem juros.</p>
+          <h2 className="font-montserrat text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">Escolha o Motor PPA Ideal Para Você</h2>
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">Trabalhamos com o Motor PPA, a melhor marca do mercado. Parcelamento em até 10x sem juros.</p>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
@@ -66,11 +66,11 @@ const Motors = () => {
               </div>
 
               <div className="text-center mb-8">
-                <div className="font-montserrat text-4xl font-bold mb-2">
-                  {motor.price}
-                </div>
-                <div className={motor.isHighlight ? "text-primary-foreground/80" : "text-muted-foreground"}>
+                <div className={`font-montserrat text-3xl sm:text-4xl font-bold mb-2 ${motor.isHighlight ? '' : 'text-muted-foreground'}`}>
                   {motor.installments}
+                </div>
+                <div className={`text-lg ${motor.isHighlight ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
+                  {motor.price}
                 </div>
               </div>
 

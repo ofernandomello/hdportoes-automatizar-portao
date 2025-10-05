@@ -14,11 +14,11 @@ const AntiTheftLock = () => {
               <span className="font-montserrat font-semibold">Segurança Máxima</span>
             </div>
 
-            <h2 className="font-montserrat text-4xl md:text-5xl font-bold mb-6">
+            <h2 className="font-montserrat text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
               Trava Automática Antiarrombamento
             </h2>
 
-            <p className="text-xl text-background/80 mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl text-background/80 mb-8 leading-relaxed">
               Além da automatização, oferecemos travas automáticas que garantem 
               proteção total contra invasões. Seu portão fica travado mesmo quando desligado.
             </p>

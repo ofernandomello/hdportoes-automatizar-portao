@@ -37,7 +37,7 @@ const FAQ = () => {
     },
     {
       question: "Vocês atendem minha região?",
-      answer: "Atendemos São Paulo e toda Grande São Paulo, incluindo: Santo André, São Bernardo do Campo, São Caetano do Sul, Diadema, Mauá, Guarulhos, Osasco, Barueri, Carapicuíba, Cotia, Taboão da Serra, Embu das Artes, Itapecerica da Serra, Ferraz de Vasconcelos, Poá, Suzano, Mogi das Cruzes, Arujá, Mairiporã, Caieiras, Franco da Rocha, Francisco Morato, Cajamar, Jandira, Itapevi, Santana de Parnaíba, Pirapora do Bom Jesus e região do ABC."
+      answer: "Atendemos São Paulo e toda Grande São Paulo, incluindo: Santo André, São Bernardo do Campo, São Caetano do Sul, Diadema, Mauá, Guarulhos, Osasco, Barueri, Carapicuíba, Cotia, Taboão da Serra, Embu das Artes, Itapecerica da Serra, Ferraz de Vasconcelos, Poá, Suzano, Arujá, Mairiporã, Caieiras, Franco da Rocha, Francisco Morato, Cajamar, Jandira, Itapevi, Santana de Parnaíba, Pirapora do Bom Jesus e região do ABC."
     },
     {
       question: "Como funciona o parcelamento?",
@@ -53,10 +53,10 @@ const FAQ = () => {
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="font-montserrat text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <h2 className="font-montserrat text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
             Dúvidas Frequentes
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
             Tire suas dúvidas sobre automatização de portões
           </p>
         </div>

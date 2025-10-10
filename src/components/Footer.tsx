@@ -46,14 +46,14 @@ const Footer = () => {
                 className="flex items-center gap-3 text-background/80 hover:text-primary transition-colors"
               >
                 <Phone className="h-5 w-5" />
-                <span>(11) 99999-9999</span>
+                <span>(11) 92134-9917</span>
               </a>
               <a 
-                href="mailto:contato@autoportao.com.br"
+                href="mailto:comercial.grupohd@gmail.com"
                 className="flex items-center gap-3 text-background/80 hover:text-primary transition-colors"
               >
                 <Mail className="h-5 w-5" />
-                <span>contato@autoportao.com.br</span>
+                <span>comercial.grupohd@gmail.com</span>
               </a>
             </div>
           </div>

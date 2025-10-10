@@ -35,7 +35,7 @@ const AntiTheftLock = () => {
               text: "Proteção mesmo em queda de energia (acionamento manual)"
             }, {
               icon: CheckCircle,
-              text: "Compatível com todos os modelos de motor"
+              text: "Compatível com todos os modelos de motores"
             }].map((item, index) => {
               const Icon = item.icon;
               return <div key={index} className="flex items-start gap-4">

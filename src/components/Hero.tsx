@@ -21,11 +21,11 @@ const Hero = () => {
             <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-primary">4 segundos</span>
           </h1>
           
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-background/90 mb-8 leading-relaxed">Chegue em casa sem precisar descer do carro. Abertura em 4 segundos com Motor PPA Jet Flex, instalação profissional e parcelamento em até 10x sem juros.</p>
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-background/90 mb-8 leading-relaxed">Qual é o preço que você pode pagar por ficar parado em frente de casa, esperando o portão abrir por um tempo que na madrugada parece ser uma eternidade?</p>
 
           {/* Benefits List */}
           <div className="space-y-3 mb-10">
-            {["Abertura em apenas 4 segundos", "Parcelamento em 10x sem juros", "Instalação profissional com garantia", "Aumento da segurança da sua família"].map((benefit, index) => <div key={index} className="flex items-center gap-3">
+            {["Abertura em apenas 4 segundos", "Preço diretamente da fábrica", "Instalação profissional com garantia", "Pagamento no cartão após a instalação"].map((benefit, index) => <div key={index} className="flex items-center gap-3">
                 <CheckCircle className="h-5 w-5 sm:h-6 sm:w-6 text-primary flex-shrink-0" />
                 <span className="text-background text-sm sm:text-base md:text-lg">{benefit}</span>
               </div>)}
@@ -35,7 +35,7 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4">
             <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-montserrat font-semibold text-lg px-8 py-6 rounded-xl shadow-[0_20px_50px_-10px_hsl(142_76%_36%/0.4)] transition-all hover:scale-105" onClick={() => window.open(whatsappLink, '_blank')}>
               <Phone className="mr-2 h-5 w-5" />
-              Automatizar em 4 Segundos
+              Automatizar meu portão
             </Button>
             
             <Button size="lg" variant="outline" className="bg-background/10 backdrop-blur-sm hover:bg-background/20 text-background border-2 border-background/30 font-montserrat font-semibold text-lg px-8 py-6 rounded-xl transition-all" onClick={() => document.getElementById('motores')?.scrollIntoView({

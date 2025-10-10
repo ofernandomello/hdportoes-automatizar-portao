@@ -4,26 +4,26 @@ import { Check, Star } from "lucide-react";
 const Motors = () => {
   const whatsappNumber = "5511999999999";
   const motors = [{
-    name: "Motor Básico",
-    subtitle: "Ideal para portões leves",
-    price: "A partir de R$ 1.290",
-    installments: "ou 10x de R$ 129,00",
+    name: "Motor Rápido Res.",
+    subtitle: "Abertura em 9 Segundos (portões leves)",
+    price: "Ou R$ 999,00 à vista",
+    installments: "10x a partir de R$ 99,90",
     features: ["Portões até 150kg", "Controles remotos inclusos", "Garantia de 12 meses", "Instalação profissional", "Sensor de segurança"],
     isHighlight: false,
     image: "/placeholder.svg"
   }, {
-    name: "Motor Premium",
-    subtitle: "Mais vendido",
-    price: "A partir de R$ 1.890",
-    installments: "ou 10x de R$ 189,00",
+    name: "Motor Ultrarrápido",
+    subtitle: "Abertura em 4 segundos (portões intermediários)",
+    price: "Ou R$ 1.590 à vista",
+    installments: "10x a partir de R$ 159,00",
     features: ["Portões até 300kg", "3 controles remotos inclusos", "Garantia de 24 meses", "Instalação profissional", "Sensor de segurança duplo", "Abertura em 4 segundos", "Sistema anti-esmagamento"],
     isHighlight: true,
     image: "/placeholder.svg"
   }, {
     name: "Motor Industrial",
     subtitle: "Máxima performance",
-    price: "A partir de R$ 2.690",
-    installments: "ou 10x de R$ 269,00",
+    price: "Ou R$ 2.690 à vista",
+    installments: "10x a partir de R$ 269,00",
     features: ["Portões até 500kg", "4 controles remotos inclusos", "Garantia de 36 meses", "Instalação profissional", "Sistema completo de segurança", "Abertura em 3 segundos", "Motor silencioso", "Automação via smartphone"],
     isHighlight: false,
     image: "/placeholder.svg"
@@ -60,16 +60,16 @@ const Motors = () => {
                 <h3 className="font-montserrat text-2xl font-bold mb-1">
                   {motor.name}
                 </h3>
-                <p className={motor.isHighlight ? "text-primary-foreground/80" : "text-muted-foreground"}>
+                <p className={`text-sm ${motor.isHighlight ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
                   {motor.subtitle}
                 </p>
               </div>
 
               <div className="text-center mb-8">
-                <div className={`font-montserrat text-3xl sm:text-4xl font-bold mb-2 ${motor.isHighlight ? '' : 'text-muted-foreground'}`}>
+                <div className={`font-montserrat text-3xl sm:text-4xl font-bold mb-2 ${motor.isHighlight ? '' : 'text-foreground'}`}>
                   {motor.installments}
                 </div>
-                <div className={`text-lg ${motor.isHighlight ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
+                <div className={`text-sm ${motor.isHighlight ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
                   {motor.price}
                 </div>
               </div>

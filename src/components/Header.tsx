@@ -1,16 +1,16 @@
-import logoPpa from "@/assets/logo-ppa.png";
+import logoPpa from "@/assets/logo-ppa.webp";
 import { Badge } from "@/components/ui/badge";
 
 const Header = () => {
   return (
     <header className="bg-background border-b-4 border-primary sticky top-0 z-50 shadow-md">
       <div className="container mx-auto px-4 py-3">
-        <div className="flex items-center justify-between">
-          <div className="flex items-center gap-4">
+        <div className="flex items-center justify-between gap-4">
+          <div className="flex items-center gap-3 md:gap-4">
             <img 
               src={logoPpa} 
               alt="Logo PPA" 
-              className="h-12 md:h-14 object-contain"
+              className="h-10 md:h-12 lg:h-14 object-contain"
             />
             <div className="hidden sm:flex items-center gap-2">
               <Badge 
@@ -22,11 +22,11 @@ const Header = () => {
             </div>
           </div>
           
-          <div className="flex flex-col items-end">
-            <p className="text-xs md:text-sm font-montserrat font-semibold text-primary uppercase tracking-wide">
+          <div className="flex flex-col items-end gap-0.5">
+            <p className="text-[10px] sm:text-xs md:text-sm font-montserrat font-semibold text-primary uppercase tracking-wide whitespace-nowrap">
               Preço Direto de Fábrica
             </p>
-            <p className="text-xs text-muted-foreground hidden md:block">
+            <p className="text-[9px] sm:text-[10px] md:text-xs text-muted-foreground hidden sm:block whitespace-nowrap">
               Parcelamento em até 10x sem juros
             </p>
           </div>

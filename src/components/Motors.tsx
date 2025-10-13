@@ -32,18 +32,21 @@ const Motors = () => {
     const message = encodeURIComponent(`Olá! Tenho interesse no ${motorName}. Gostaria de mais informações.`);
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
   };
-  return <section id="motores" className="py-20 bg-background">
+  return <section id="motores" className="py-20 bg-gradient-to-br from-yellow-400/20 via-background to-primary/10">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
-          <h2 className="font-montserrat text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 md:mb-4 px-4">Escolha o Motor PPA Ideal Para Você</h2>
-          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto px-4">Trabalhamos com o Motor PPA, a melhor marca do mercado. Parcelamento em até 10x sem juros.</p>
+          <div className="inline-block bg-primary text-primary-foreground px-6 py-2 rounded-lg mb-4 shadow-lg">
+            <p className="font-montserrat font-black text-lg md:text-xl uppercase">💰 Preços Imbatíveis 💰</p>
+          </div>
+          <h2 className="font-montserrat text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-3 md:mb-4 px-4">Escolha o Motor PPA Ideal Para Você</h2>
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-foreground font-bold max-w-2xl mx-auto px-4 bg-yellow-400/30 py-3 rounded-lg border-2 border-primary/30">Trabalhamos com o Motor PPA, a melhor marca do mercado. Parcelamento em até 10x sem juros.</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-7xl mx-auto">
-          {motors.map((motor, index) => <div key={index} className={`relative rounded-2xl p-6 md:p-8 transition-all ${motor.isHighlight ? 'bg-primary text-primary-foreground shadow-[0_20px_50px_-10px_hsl(24_100%_50%/0.4)] md:scale-105 lg:-my-4' : 'bg-card text-card-foreground shadow-[0_4px_20px_-2px_hsl(0_0%_0%/0.08)] hover:shadow-[0_8px_30px_-4px_hsl(0_0%_0%/0.12)]'}`}>
-              {motor.isHighlight && <Badge className="absolute -top-3 left-1/2 -translate-x-1/2 text-background px-3 md:px-4 py-1 font-montserrat font-semibold text-xs md:text-sm bg-yellow-400">
-                  <Star className="h-3 w-3 md:h-4 md:w-4 mr-1 inline" />
-                  MAIS VENDIDO
+          {motors.map((motor, index) => <div key={index} className={`relative rounded-2xl p-6 md:p-8 transition-all border-4 ${motor.isHighlight ? 'bg-gradient-to-br from-yellow-400 to-primary text-foreground shadow-[0_20px_50px_-10px_hsl(24_100%_50%/0.6)] md:scale-110 lg:-my-4 border-foreground' : 'bg-background text-card-foreground shadow-[0_8px_30px_-4px_hsl(0_0%_0%/0.15)] hover:shadow-[0_12px_40px_-4px_hsl(0_0%_0%/0.2)] border-primary/50'}`}>
+              {motor.isHighlight && <Badge className="absolute -top-4 left-1/2 -translate-x-1/2 text-foreground px-4 md:px-6 py-2 font-montserrat font-black text-sm md:text-base bg-yellow-400 border-2 border-foreground shadow-lg animate-pulse">
+                  <Star className="h-4 w-4 md:h-5 md:w-5 mr-1 inline fill-current" />
+                  ⚡ MAIS VENDIDO ⚡
                 </Badge>}
 
               <div className="mb-4 md:mb-6">
@@ -66,11 +69,13 @@ const Motors = () => {
               </div>
 
               <div className="text-center mb-8">
-                <div className={`font-montserrat text-2xl sm:text-3xl md:text-4xl font-bold mb-2 whitespace-nowrap ${motor.isHighlight ? '' : 'text-foreground'}`}>
-                  {motor.installments}
-                </div>
-                <div className={`text-xs sm:text-sm whitespace-nowrap ${motor.isHighlight ? "text-primary-foreground/80" : "text-muted-foreground"}`}>
-                  {motor.price}
+                <div className={`inline-block bg-gradient-to-r from-yellow-400 to-primary px-4 py-3 rounded-lg border-2 border-foreground/20 shadow-lg mb-3`}>
+                  <div className="font-montserrat text-2xl sm:text-3xl md:text-4xl font-black whitespace-nowrap text-foreground">
+                    {motor.installments}
+                  </div>
+                  <div className="text-xs sm:text-sm font-bold whitespace-nowrap text-foreground/80">
+                    {motor.price}
+                  </div>
                 </div>
               </div>
 
@@ -83,8 +88,8 @@ const Motors = () => {
                   </li>)}
               </ul>
 
-              <Button className={`w-full font-montserrat font-semibold py-5 md:py-6 text-base md:text-lg rounded-xl transition-all ${motor.isHighlight ? 'bg-background text-foreground hover:bg-background/90 shadow-lg' : 'bg-primary text-primary-foreground hover:bg-primary/90'}`} onClick={() => handleWhatsApp(motor.name)}>
-                Solicitar Orçamento
+              <Button className={`w-full font-montserrat font-black py-6 md:py-7 text-base md:text-xl rounded-xl transition-all border-2 shadow-lg hover:scale-105 ${motor.isHighlight ? 'bg-foreground text-background hover:bg-foreground/90 border-foreground' : 'bg-primary text-primary-foreground hover:bg-primary/90 border-primary'}`} onClick={() => handleWhatsApp(motor.name)}>
+                📞 SOLICITAR ORÇAMENTO
               </Button>
             </div>)}
         </div>

@@ -5,20 +5,16 @@ const Hero = () => {
   const whatsappNumber = "5511999999999"; // Número do WhatsApp
   const whatsappMessage = encodeURIComponent("Olá! Gostaria de saber mais sobre a automatização de portões.");
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
-  return (
-    <section className="relative min-h-[600px] md:min-h-[700px] lg:min-h-[800px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary/10 via-background to-yellow-400/10">
+  return <section className="relative min-h-[600px] md:min-h-[700px] lg:min-h-[800px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary/10 via-background to-yellow-400/10">
       {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20"
-        style={{
-          backgroundImage: `url(${heroGate})`
-        }}
-      />
+      <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" style={{
+      backgroundImage: `url(${heroGate})`
+    }} />
       
       {/* Diagonal stripes pattern for factory feel */}
       <div className="absolute inset-0 opacity-5" style={{
-        backgroundImage: 'repeating-linear-gradient(45deg, hsl(var(--primary)) 0px, hsl(var(--primary)) 2px, transparent 2px, transparent 10px)'
-      }} />
+      backgroundImage: 'repeating-linear-gradient(45deg, hsl(var(--primary)) 0px, hsl(var(--primary)) 2px, transparent 2px, transparent 10px)'
+    }} />
 
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10">
@@ -32,9 +28,7 @@ const Hero = () => {
             </div>
           </div>
           
-          <h1 className="font-montserrat text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-foreground mb-4 md:mb-6 leading-tight px-4 drop-shadow-lg">
-            Automatize Seu Portão com Motor PPA
-          </h1>
+          <h1 className="font-montserrat text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black text-foreground mb-4 md:mb-6 leading-tight px-4 drop-shadow-lg">Automatizamos Seu Portão com Motor PPA</h1>
 
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-foreground font-semibold mb-6 md:mb-8 leading-relaxed px-4 max-w-3xl mx-auto bg-background/90 py-4 rounded-lg">
             Qual é o preço que você pode pagar por ficar parado em frente de casa, esperando o portão abrir por um tempo que na madrugada parece ser uma eternidade?
@@ -54,32 +48,22 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4">
-            <Button 
-              size="lg"
-              className="w-full sm:w-auto bg-gradient-to-r from-primary to-yellow-400 hover:from-primary/90 hover:to-yellow-400/90 text-foreground font-montserrat font-black text-base md:text-xl px-8 md:px-12 py-6 md:py-8 rounded-xl shadow-[0_8px_30px_hsl(24_100%_50%/0.6)] hover:shadow-[0_12px_40px_hsl(24_100%_50%/0.8)] transition-all border-2 border-foreground/20 animate-pulse"
-              onClick={() => {
-                const message = encodeURIComponent("Olá! Quero automatizar meu portão. Gostaria de mais informações.");
-                window.open(`https://wa.me/5511921349917?text=${message}`, '_blank');
-              }}
-            >
+            <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-primary to-yellow-400 hover:from-primary/90 hover:to-yellow-400/90 text-foreground font-montserrat font-black text-base md:text-xl px-8 md:px-12 py-6 md:py-8 rounded-xl shadow-[0_8px_30px_hsl(24_100%_50%/0.6)] hover:shadow-[0_12px_40px_hsl(24_100%_50%/0.8)] transition-all border-2 border-foreground/20 animate-pulse" onClick={() => {
+            const message = encodeURIComponent("Olá! Quero automatizar meu portão. Gostaria de mais informações.");
+            window.open(`https://wa.me/5511921349917?text=${message}`, '_blank');
+          }}>
               🔥 AUTOMATIZAR MEU PORTÃO 🔥
             </Button>
             
-            <Button 
-              size="lg"
-              variant="outline"
-              className="w-full sm:w-auto bg-background hover:bg-background/90 text-foreground border-2 border-primary font-montserrat font-bold text-base md:text-lg px-6 md:px-8 py-5 md:py-6 rounded-xl transition-all hover:scale-105"
-              onClick={() => document.getElementById('motores')?.scrollIntoView({
-                behavior: 'smooth'
-              })}
-            >
+            <Button size="lg" variant="outline" className="w-full sm:w-auto bg-background hover:bg-background/90 text-foreground border-2 border-primary font-montserrat font-bold text-base md:text-lg px-6 md:px-8 py-5 md:py-6 rounded-xl transition-all hover:scale-105" onClick={() => document.getElementById('motores')?.scrollIntoView({
+            behavior: 'smooth'
+          })}>
               Ver Modelos
             </Button>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
 const VideoSection = () => {
   return <section className="py-16 bg-background">

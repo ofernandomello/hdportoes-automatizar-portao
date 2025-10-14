@@ -4,25 +4,23 @@ const AntiTheftLock = () => {
   const whatsappNumber = "5511999999999";
   const whatsappMessage = encodeURIComponent("Olá! Gostaria de saber mais sobre a trava automática antiarrombamento.");
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
-  return <section className="py-20 bg-foreground text-background">
+  return <section className="py-20 bg-gradient-to-br from-background via-yellow-400/10 to-primary/20">
       <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+        <div className="text-center mb-12 md:mb-16">
+          <div className="inline-block bg-primary text-primary-foreground px-6 py-2 rounded-lg mb-4 shadow-lg">
+            <p className="font-montserrat font-black text-lg md:text-xl uppercase">🔒 PROTEÇÃO MÁXIMA 🔒</p>
+          </div>
+          <h2 className="font-montserrat text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-3 md:mb-4 px-4">
+            Trava Automática Antiarrombamento
+          </h2>
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-foreground font-bold max-w-2xl mx-auto px-4 bg-yellow-400/30 py-3 rounded-lg border-2 border-primary/30">
+            Além da automatização, oferecemos travas automáticas que garantem proteção total contra invasões
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center max-w-6xl mx-auto">
           {/* Content */}
           <div>
-            <div className="inline-flex items-center gap-2 bg-primary/20 text-primary px-4 py-2 rounded-full mb-6">
-              <Shield className="h-5 w-5" />
-              <span className="font-montserrat font-semibold">Segurança Máxima</span>
-            </div>
-
-            <h2 className="font-montserrat text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-              Trava Automática Antiarrombamento
-            </h2>
-
-            <p className="text-base sm:text-lg md:text-xl text-background/80 mb-8 leading-relaxed">
-              Além da automatização, oferecemos travas automáticas que garantem 
-              proteção total contra invasões. Seu portão fica travado mesmo quando desligado.
-            </p>
-
             <div className="space-y-4 mb-8">
               {[{
               icon: Lock,
@@ -38,21 +36,21 @@ const AntiTheftLock = () => {
               text: "Compatível com todos os modelos de motores"
             }].map((item, index) => {
               const Icon = item.icon;
-              return <div key={index} className="flex items-start gap-4">
-                    <div className="bg-primary/20 p-2 rounded-lg flex-shrink-0">
-                      <Icon className="h-5 w-5 text-primary" />
+              return <div key={index} className="flex items-start gap-4 bg-background p-4 rounded-xl border-2 border-primary/30 shadow-md">
+                    <div className="bg-gradient-to-br from-yellow-400 to-primary p-3 rounded-lg flex-shrink-0 shadow-lg">
+                      <Icon className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                     </div>
-                    <span className="text-lg text-background/90">{item.text}</span>
+                    <span className="text-base md:text-lg text-foreground font-semibold">{item.text}</span>
                   </div>;
             })}
             </div>
 
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-montserrat font-semibold text-lg px-8 py-6 rounded-xl shadow-[0_20px_50px_-10px_hsl(142_76%_36%/0.4)] transition-all hover:scale-105" onClick={() => window.open(whatsappLink, '_blank')}>Adicionar Trava ao Orçamento</Button>
+            <Button size="lg" className="w-full lg:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-montserrat font-black text-base md:text-xl px-8 py-6 md:py-7 rounded-xl shadow-lg transition-all hover:scale-105 border-2 border-primary" onClick={() => window.open(whatsappLink, '_blank')}>📞 ADICIONAR TRAVA AO ORÇAMENTO</Button>
           </div>
 
           {/* Visual */}
           <div className="relative">
-            <div className="bg-background/10 backdrop-blur-sm rounded-2xl p-8 border border-background/20">
+            <div className="bg-background rounded-2xl p-6 md:p-8 border-4 border-primary/50 shadow-[0_12px_40px_-4px_hsl(24_100%_50%/0.3)]">
               <div className="aspect-square bg-muted rounded-xl overflow-hidden">
                 <img 
                   src="/placeholder.svg" 
@@ -62,20 +60,22 @@ const AntiTheftLock = () => {
               </div>
               
               <div className="mt-6 text-center">
-                <div className="font-montserrat text-3xl font-bold mb-2">
-                  A partir de R$ 490
-                </div>
-                <div className="text-background/70">
-                  ou 10x de R$ 49,00 sem juros
+                <div className="inline-block bg-gradient-to-r from-yellow-400 to-primary px-6 py-4 rounded-lg border-2 border-foreground/20 shadow-lg">
+                  <div className="font-montserrat text-2xl sm:text-3xl md:text-4xl font-black text-foreground">
+                    A partir de R$\u00A0490
+                  </div>
+                  <div className="text-sm md:text-base text-foreground/80 font-bold">
+                    ou 10x de R$\u00A049,00 sem juros
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Floating badges */}
-            <div className="absolute -top-4 -right-4 bg-primary text-primary-foreground px-6 py-3 rounded-xl font-montserrat font-bold shadow-lg">
+            <div className="absolute -top-4 -right-4 bg-gradient-to-br from-yellow-400 to-primary text-foreground px-4 md:px-6 py-3 rounded-xl font-montserrat font-black shadow-lg border-2 border-foreground text-sm md:text-base">
               +100 instalações
             </div>
-            <div className="absolute -bottom-4 -left-4 bg-background text-foreground px-6 py-3 rounded-xl font-montserrat font-bold shadow-lg">
+            <div className="absolute -bottom-4 -left-4 bg-primary text-primary-foreground px-4 md:px-6 py-3 rounded-xl font-montserrat font-black shadow-lg border-2 border-primary-foreground text-sm md:text-base">
               Garantia 2 anos
             </div>
           </div>

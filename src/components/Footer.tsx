@@ -10,21 +10,22 @@ const Footer = () => {
     <footer className="bg-foreground text-background">
       {/* CTA Section */}
       <div className="border-b border-background/10">
-        <div className="container mx-auto px-4 py-16">
+        <div className="container mx-auto px-4 py-12 md:py-16">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="font-montserrat text-3xl md:text-4xl font-bold mb-6">
+            <h2 className="font-montserrat text-2xl sm:text-3xl md:text-4xl font-bold mb-4 md:mb-6">
               Pronto Para Automatizar Seu Portão?
             </h2>
-            <p className="text-xl text-background/80 mb-8">
+            <p className="text-base sm:text-lg md:text-xl text-background/80 mb-6 md:mb-8">
               Fale com nossos especialistas agora e receba um orçamento personalizado
             </p>
             <Button 
               size="lg"
-              className="bg-primary hover:bg-primary/90 text-primary-foreground font-montserrat font-semibold text-lg px-12 py-6 rounded-xl shadow-[0_20px_50px_-10px_hsl(142_76%_36%/0.4)] transition-all hover:scale-105"
+              className="bg-primary hover:bg-primary/90 text-primary-foreground font-montserrat font-semibold text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-12 py-5 md:py-6 rounded-xl shadow-[0_20px_50px_-10px_hsl(142_76%_36%/0.4)] transition-all hover:scale-105"
               onClick={() => window.open(whatsappLink, '_blank')}
             >
-              <Phone className="mr-2 h-5 w-5" />
-              Solicitar Orçamento Personalizado
+              <Phone className="mr-2 h-4 w-4 md:h-5 md:w-5" />
+              <span className="hidden sm:inline">Solicitar Orçamento Personalizado</span>
+              <span className="sm:hidden">Solicitar Orçamento</span>
             </Button>
           </div>
         </div>

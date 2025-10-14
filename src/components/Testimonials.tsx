@@ -47,20 +47,20 @@ const Testimonials = () => {
   return (
     <section className="py-20 bg-secondary">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="font-montserrat text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
+        <div className="text-center mb-12 md:mb-16 px-4">
+          <h2 className="font-montserrat text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 md:mb-4">
             O Que Nossos Clientes Dizem
           </h2>
-          <p className="text-base sm:text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground max-w-2xl mx-auto">
             Centenas de famílias já automatizaram seus portões com nosso Motor PPA
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-7xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <div 
               key={index}
-              className="bg-card rounded-2xl p-8 shadow-[0_4px_20px_-2px_hsl(0_0%_0%/0.08)] hover:shadow-[0_8px_30px_-4px_hsl(0_0%_0%/0.12)] transition-all"
+              className="bg-card rounded-2xl p-4 sm:p-6 md:p-8 shadow-[0_4px_20px_-2px_hsl(0_0%_0%/0.08)] hover:shadow-[0_8px_30px_-4px_hsl(0_0%_0%/0.12)] transition-all"
             >
               {/* Rating */}
               <div className="flex gap-1 mb-4">
@@ -88,20 +88,20 @@ const Testimonials = () => {
         </div>
 
         {/* Trust badges */}
-        <div className="mt-16 flex flex-wrap justify-center items-center gap-8 text-center">
+        <div className="mt-12 md:mt-16 flex flex-wrap justify-center items-center gap-6 md:gap-8 text-center px-4">
           <div>
-            <div className="font-montserrat text-4xl font-bold text-primary mb-2">500+</div>
-            <div className="text-muted-foreground">Portões Automatizados</div>
+            <div className="font-montserrat text-3xl md:text-4xl font-bold text-primary mb-2">500+</div>
+            <div className="text-muted-foreground text-sm md:text-base">Portões Automatizados</div>
           </div>
           <div className="h-12 w-px bg-border hidden md:block" />
           <div>
-            <div className="font-montserrat text-4xl font-bold text-primary mb-2">98%</div>
-            <div className="text-muted-foreground">Satisfação dos Clientes</div>
+            <div className="font-montserrat text-3xl md:text-4xl font-bold text-primary mb-2">98%</div>
+            <div className="text-muted-foreground text-sm md:text-base">Satisfação dos Clientes</div>
           </div>
           <div className="h-12 w-px bg-border hidden md:block" />
           <div>
-            <div className="font-montserrat text-4xl font-bold text-primary mb-2">15+</div>
-            <div className="text-muted-foreground">Anos de Experiência</div>
+            <div className="font-montserrat text-3xl md:text-4xl font-bold text-primary mb-2">15+</div>
+            <div className="text-muted-foreground text-sm md:text-base">Anos de Experiência</div>
           </div>
         </div>
 

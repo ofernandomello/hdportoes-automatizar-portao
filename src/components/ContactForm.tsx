@@ -48,16 +48,16 @@ const ContactForm = () => {
     <section id="formulario" className="py-20 bg-secondary">
       <div className="container mx-auto px-4">
         <div className="max-w-2xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="font-montserrat text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-4">
+          <div className="text-center mb-8 md:mb-12 px-4">
+            <h2 className="font-montserrat text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-3 md:mb-4">
               Solicite Seu Orçamento
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-muted-foreground">
+            <p className="text-sm sm:text-base md:text-lg lg:text-xl text-muted-foreground">
               Preencha o formulário e receba uma proposta personalizada
             </p>
           </div>
 
-          <form onSubmit={handleSubmit} className="bg-card rounded-2xl p-8 shadow-lg space-y-6">
+          <form onSubmit={handleSubmit} className="bg-card rounded-2xl p-4 sm:p-6 md:p-8 shadow-lg space-y-4 md:space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="space-y-2">
                 <Label htmlFor="cidade" className="text-base font-montserrat">

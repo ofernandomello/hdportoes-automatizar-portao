@@ -60,11 +60,11 @@ const AntiTheftLock = () => {
               </div>
               
               <div className="mt-6 text-center">
-                <div className="inline-block bg-gradient-to-r from-yellow-400 to-primary px-6 py-4 rounded-lg border-2 border-foreground/20 shadow-lg">
-                  <div className="font-montserrat text-2xl sm:text-3xl md:text-4xl font-black text-foreground">
+                <div className="inline-block bg-gradient-to-r from-yellow-400 to-primary px-3 sm:px-4 md:px-6 py-3 md:py-4 rounded-lg border-2 border-foreground/20 shadow-lg">
+                  <div className="font-montserrat text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-foreground leading-tight">
                     A partir de R$\u00A0490
                   </div>
-                  <div className="text-sm md:text-base text-foreground/80 font-bold">
+                  <div className="text-xs sm:text-sm md:text-base text-foreground/80 font-bold leading-tight mt-0.5">
                     ou 10x de R$\u00A049,00 sem juros
                   </div>
                 </div>
@@ -72,10 +72,10 @@ const AntiTheftLock = () => {
             </div>
 
             {/* Floating badges */}
-            <div className="absolute -top-4 -right-4 bg-gradient-to-br from-yellow-400 to-primary text-foreground px-4 md:px-6 py-3 rounded-xl font-montserrat font-black shadow-lg border-2 border-foreground text-sm md:text-base">
+            <div className="absolute -top-3 sm:-top-4 -right-2 sm:-right-4 bg-gradient-to-br from-yellow-400 to-primary text-foreground px-2 sm:px-3 md:px-4 lg:px-6 py-2 md:py-3 rounded-lg md:rounded-xl font-montserrat font-black shadow-lg border-2 border-foreground text-[10px] sm:text-xs md:text-sm lg:text-base whitespace-nowrap">
               +100 instalações
             </div>
-            <div className="absolute -bottom-4 -left-4 bg-primary text-primary-foreground px-4 md:px-6 py-3 rounded-xl font-montserrat font-black shadow-lg border-2 border-primary-foreground text-sm md:text-base">
+            <div className="absolute -bottom-3 sm:-bottom-4 -left-2 sm:-left-4 bg-primary text-primary-foreground px-2 sm:px-3 md:px-4 lg:px-6 py-2 md:py-3 rounded-lg md:rounded-xl font-montserrat font-black shadow-lg border-2 border-primary-foreground text-[10px] sm:text-xs md:text-sm lg:text-base whitespace-nowrap">
               Garantia 2 anos
             </div>
           </div>

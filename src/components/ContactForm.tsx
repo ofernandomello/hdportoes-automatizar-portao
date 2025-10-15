@@ -9,7 +9,7 @@ const ContactForm = () => {
     cidade: "",
     bairro: "",
     tipo: "automatizacao",
-    velocidade: "4s",
+    motor: "intermediario",
     nome: "",
     telefone: "",
     email: ""
@@ -20,10 +20,10 @@ const ContactForm = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    const velocidadeTexto = {
-      "4s": "Em até 4s (10x a partir de R$ 269)",
-      "9s": "Em até 9s (10x a partir de R$ 189)",
-      "16s": "Em até 16s (10x a partir de R$ 129)"
+    const motorTexto = {
+      "leve": "Portão Leve (350kg) - Abertura em 4 Segundos - 10x de 167",
+      "intermediario": "Portão Intermediário (400kg) - Abertura em 4 Segundos - 10x de 187",
+      "pesado": "Portão Pesado (450kg) - Abertura em 4 Segundos - 10x de 207"
     };
 
     const tipoTexto = formData.tipo === "automatizacao" 
@@ -38,7 +38,7 @@ const ContactForm = () => {
       `📍 Cidade: ${formData.cidade}\n` +
       `📍 Bairro: ${formData.bairro}\n` +
       `🔧 Serviço: ${tipoTexto}\n` +
-      `⚡ Velocidade: ${velocidadeTexto[formData.velocidade as keyof typeof velocidadeTexto]}`
+      `🚗 Motor: ${motorTexto[formData.motor as keyof typeof motorTexto]}`
     );
 
     window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
@@ -114,29 +114,29 @@ const ContactForm = () => {
 
             <div className="space-y-3">
               <Label className="text-base font-montserrat">
-                Preferência de tempo de abertura do portão: *
+                Qual motor você deseja: *
               </Label>
               <RadioGroup
-                value={formData.velocidade}
-                onValueChange={(value) => setFormData({...formData, velocidade: value})}
+                value={formData.motor}
+                onValueChange={(value) => setFormData({...formData, motor: value})}
                 className="space-y-3"
               >
                 <div className="flex items-center space-x-3 bg-background/50 p-4 rounded-lg">
-                  <RadioGroupItem value="4s" id="4s" />
-                  <Label htmlFor="4s" className="cursor-pointer flex-1 font-normal">
-                    Em até 4s <span className="text-primary font-semibold">(10x a partir de R$ 269)</span>
+                  <RadioGroupItem value="leve" id="leve" />
+                  <Label htmlFor="leve" className="cursor-pointer flex-1 font-normal">
+                    Portão Leve (350kg) - <span className="text-primary font-semibold">10x de 167</span>
                   </Label>
                 </div>
                 <div className="flex items-center space-x-3 bg-background/50 p-4 rounded-lg">
-                  <RadioGroupItem value="9s" id="9s" />
-                  <Label htmlFor="9s" className="cursor-pointer flex-1 font-normal">
-                    Em até 9s <span className="text-primary font-semibold">(10x a partir de R$ 189)</span>
+                  <RadioGroupItem value="intermediario" id="intermediario" />
+                  <Label htmlFor="intermediario" className="cursor-pointer flex-1 font-normal">
+                    Portão Intermediário (400kg) - <span className="text-primary font-semibold">10x de 187</span>
                   </Label>
                 </div>
                 <div className="flex items-center space-x-3 bg-background/50 p-4 rounded-lg">
-                  <RadioGroupItem value="16s" id="16s" />
-                  <Label htmlFor="16s" className="cursor-pointer flex-1 font-normal">
-                    Em até 16s <span className="text-primary font-semibold">(10x a partir de R$ 129)</span>
+                  <RadioGroupItem value="pesado" id="pesado" />
+                  <Label htmlFor="pesado" className="cursor-pointer flex-1 font-normal">
+                    Portão Pesado (450kg) - <span className="text-primary font-semibold">10x de 207</span>
                   </Label>
                 </div>
               </RadioGroup>

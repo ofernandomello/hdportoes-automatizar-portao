@@ -21,9 +21,9 @@ const ContactForm = () => {
     e.preventDefault();
     
     const motorTexto = {
-      "leve": "Portão Leve (350kg) - Abertura em 4 Segundos - 10x de 167",
-      "intermediario": "Portão Intermediário (400kg) - Abertura em 4 Segundos - 10x de 187",
-      "pesado": "Portão Pesado (450kg) - Abertura em 4 Segundos - 10x de 207"
+      "leve": "Abertura em 4 Segundos - Portão Leve (350kg) - 10x R$ 167,00",
+      "intermediario": "Abertura em 4 Segundos - Portão Intermediário (400kg) - 10x R$ 187,00",
+      "pesado": "Abertura em 4 Segundos - Portão Pesado (450kg) - 10x R$ 207,00"
     };
 
     const tipoTexto = formData.tipo === "automatizacao" 
@@ -124,19 +124,19 @@ const ContactForm = () => {
                 <div className="flex items-center space-x-3 bg-background/50 p-4 rounded-lg">
                   <RadioGroupItem value="leve" id="leve" />
                   <Label htmlFor="leve" className="cursor-pointer flex-1 font-normal">
-                    Portão Leve (350kg) - <span className="text-primary font-semibold">10x de 167</span>
+                    Abertura em 4 Segundos - Portão Leve (350kg) - <span className="text-primary font-semibold">10x R$ 167,00</span>
                   </Label>
                 </div>
                 <div className="flex items-center space-x-3 bg-background/50 p-4 rounded-lg">
                   <RadioGroupItem value="intermediario" id="intermediario" />
                   <Label htmlFor="intermediario" className="cursor-pointer flex-1 font-normal">
-                    Portão Intermediário (400kg) - <span className="text-primary font-semibold">10x de 187</span>
+                    Abertura em 4 Segundos - Portão Intermediário (400kg) - <span className="text-primary font-semibold">10x R$ 187,00</span>
                   </Label>
                 </div>
                 <div className="flex items-center space-x-3 bg-background/50 p-4 rounded-lg">
                   <RadioGroupItem value="pesado" id="pesado" />
                   <Label htmlFor="pesado" className="cursor-pointer flex-1 font-normal">
-                    Portão Pesado (450kg) - <span className="text-primary font-semibold">10x de 207</span>
+                    Abertura em 4 Segundos - Portão Pesado (450kg) - <span className="text-primary font-semibold">10x R$ 207,00</span>
                   </Label>
                 </div>
               </RadioGroup>

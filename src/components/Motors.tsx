@@ -8,20 +8,20 @@ import logoPPA from "@/assets/logo-ppa.webp";
 const Motors = () => {
   const whatsappNumber = "5511999999999";
   const motors = [{
-    name: "Portão Leve (350kg)",
-    subtitle: "Abertura em 4 Segundos",
-    installments: "10x de 167",
+    name: "Abertura em 4 Segundos",
+    subtitle: "Portão Leve (350kg)",
+    installments: "10x R$ 167,00",
     image: motorA
   }, {
-    name: "Portão Intermediário (400kg)",
-    subtitle: "Abertura em 4 Segundos",
-    installments: "10x de 187",
+    name: "Abertura em 4 Segundos",
+    subtitle: "Portão Intermediário (400kg)",
+    installments: "10x R$ 187,00",
     isHighlight: true,
     image: motorB
   }, {
-    name: "Portão Pesado (450kg)",
-    subtitle: "Abertura em 4 Segundos",
-    installments: "10x de 207",
+    name: "Abertura em 4 Segundos",
+    subtitle: "Portão Pesado (450kg)",
+    installments: "10x R$ 207,00",
     image: motorC
   }];
   const handleWhatsApp = (motorName: string) => {
@@ -34,8 +34,8 @@ const Motors = () => {
         <div className="max-w-7xl mx-auto mb-8">
           <div className="bg-gradient-to-r from-yellow-400 via-primary to-yellow-500 rounded-2xl shadow-2xl overflow-hidden border-4 border-foreground">
             <div className="flex items-center justify-between px-6 md:px-8 py-4 md:py-6">
-              <h2 className="font-montserrat text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-foreground">
-                10x sem juros - Kit Instalado
+              <h2 className="font-montserrat text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-foreground">
+                Motor PPA em 10x s/ juros com o kit instalado
               </h2>
               <img src={logoPPA} alt="PPA Logo" className="h-12 md:h-16 lg:h-20 object-contain bg-background rounded px-3 py-2" />
             </div>

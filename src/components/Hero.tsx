@@ -31,12 +31,12 @@ const Hero = () => {
           <h1 className="font-montserrat text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-foreground mb-4 md:mb-6 leading-tight px-4 drop-shadow-lg">Automatizamos Seu Portão com Motor PPA</h1>
 
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-foreground font-semibold mb-6 md:mb-8 leading-relaxed px-4 max-w-3xl mx-auto bg-background/90 py-3 md:py-4 rounded-lg">
-            Qual é o preço que você pode pagar por ficar parado em frente de casa, esperando o portão abrir por um tempo que na madrugada parece ser uma eternidade?
+            Cada segundo parado na rua é um risco. O PPA JetFlex Ultra Rápido abre rápido, protege sua família e traz a tranquilidade que você merece ao chegar em casa.
           </p>
 
           {/* Benefits List */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 md:gap-4 mb-6 md:mb-8 lg:mb-10 max-w-2xl mx-auto px-4">
-            {["Abertura em apenas 4 segundos", "Preço diretamente da fábrica", "Instalação profissional com garantia", "Pagamento no cartão após a instalação"].map((benefit, index) => <div key={index} className="flex items-center gap-2 md:gap-3 text-left bg-background border-2 border-primary p-2 sm:p-3 md:p-4 rounded-lg shadow-md hover:shadow-lg transition-all">
+            {["Abertura em apenas 4 segundos", "Controle anti-clonagem", "Instalador especializado PPA", "Pagamento no cartão após a instalação"].map((benefit, index) => <div key={index} className="flex items-center gap-2 md:gap-3 text-left bg-background border-2 border-primary p-2 sm:p-3 md:p-4 rounded-lg shadow-md hover:shadow-lg transition-all">
                 <div className="bg-primary rounded-full p-1">
                   <Check className="h-3 w-3 sm:h-4 sm:w-4 md:h-5 md:w-5 text-primary-foreground flex-shrink-0" />
                 </div>
@@ -77,8 +77,15 @@ const VideoSection = () => {
               Assista nosso motor em ação
             </p>
           </div>
-          <div className="aspect-video bg-muted rounded-2xl shadow-lg flex items-center justify-center">
-            <p className="text-muted-foreground">Espaço reservado para vídeo</p>
+          <div className="aspect-video bg-muted rounded-2xl shadow-lg overflow-hidden">
+            <video 
+              controls 
+              className="w-full h-full"
+              poster="/placeholder.svg"
+            >
+              <source src="/video-secao-2.mp4" type="video/mp4" />
+              Seu navegador não suporta vídeos.
+            </video>
           </div>
         </div>
       </div>

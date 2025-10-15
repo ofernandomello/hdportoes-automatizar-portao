@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Shield, Lock, AlertTriangle, CheckCircle } from "lucide-react";
+import { Shield, Check, Zap, CreditCard } from "lucide-react";
 const AntiTheftLock = () => {
   const whatsappNumber = "5511999999999";
   const whatsappMessage = encodeURIComponent("Olá! Gostaria de saber mais sobre a trava automática antiarrombamento.");
@@ -23,17 +23,17 @@ const AntiTheftLock = () => {
           <div>
             <div className="space-y-4 mb-8">
               {[{
-              icon: Lock,
-              text: "Trava de alta resistência"
-            }, {
               icon: Shield,
-              text: "Impede abertura manual forçada"
+              text: "Compatível com todos os motores"
             }, {
-              icon: AlertTriangle,
-              text: "Proteção mesmo em queda de energia (acionamento manual)"
+              icon: Zap,
+              text: "Acionamento automático"
             }, {
-              icon: CheckCircle,
-              text: "Compatível com todos os modelos de motores"
+              icon: Check,
+              text: "Não precisa de controle adicional"
+            }, {
+              icon: CreditCard,
+              text: "Pagamento no cartão após a instalação"
             }].map((item, index) => {
               const Icon = item.icon;
               return <div key={index} className="flex items-start gap-4 bg-background p-4 rounded-xl border-2 border-primary/30 shadow-md">
@@ -51,23 +51,15 @@ const AntiTheftLock = () => {
           {/* Visual */}
           <div className="relative">
             <div className="bg-background rounded-2xl p-6 md:p-8 border-4 border-primary/50 shadow-[0_12px_40px_-4px_hsl(24_100%_50%/0.3)]">
-              <div className="aspect-square bg-muted rounded-xl overflow-hidden">
-                <img 
-                  src="/placeholder.svg" 
-                  alt="Trava Automática Antiarrombamento"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              
-              <div className="mt-6 text-center">
-                <div className="inline-block bg-gradient-to-r from-yellow-400 to-primary px-3 sm:px-4 md:px-6 py-3 md:py-4 rounded-lg border-2 border-foreground/20 shadow-lg">
-                  <div className="font-montserrat text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-foreground leading-tight">
-                    A partir de R$\u00A0490
-                  </div>
-                  <div className="text-xs sm:text-sm md:text-base text-foreground/80 font-bold leading-tight mt-0.5">
-                    ou 10x de R$\u00A049,00 sem juros
-                  </div>
-                </div>
+              <div className="aspect-video bg-muted rounded-xl overflow-hidden">
+                <video 
+                  controls 
+                  className="w-full h-full"
+                  poster="/placeholder.svg"
+                >
+                  <source src="/video-trava.mp4" type="video/mp4" />
+                  Seu navegador não suporta vídeos.
+                </video>
               </div>
             </div>
 

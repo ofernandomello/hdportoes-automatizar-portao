@@ -30,6 +30,22 @@ const Motors = () => {
   };
   return <section id="motores" className="py-20 bg-gradient-to-br from-yellow-400/20 via-background to-primary/10">
       <div className="container mx-auto px-4">
+        {/* Headline Section */}
+        <div className="max-w-7xl mx-auto mb-8 text-center">
+          <Badge className="bg-primary hover:bg-primary text-primary-foreground font-montserrat font-black text-sm md:text-base px-6 py-2 mb-4 inline-flex items-center gap-2">
+            💰 PREÇOS IMBATÍVEIS 💰
+          </Badge>
+          <h2 className="font-montserrat text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-6">
+            Escolha o Motor PPA Ideal Para Você
+          </h2>
+          <div className="bg-yellow-400/30 border-2 border-yellow-400/50 rounded-xl px-6 py-4 max-w-3xl mx-auto">
+            <p className="font-montserrat text-base md:text-lg text-foreground">
+              Trabalhamos com o Motor PPA, a melhor marca do mercado.{" "}
+              <span className="font-black">Parcelamento em até 10x sem juros.</span>
+            </p>
+          </div>
+        </div>
+
         {/* Banner Principal */}
         <div className="max-w-7xl mx-auto mb-8">
           <div className="bg-gradient-to-r from-yellow-400 via-primary to-yellow-500 rounded-2xl shadow-2xl overflow-hidden border-4 border-foreground">

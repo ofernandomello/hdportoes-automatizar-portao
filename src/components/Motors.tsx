@@ -85,11 +85,14 @@ const Motors = () => {
                     </div>
 
                     <div className="text-center">
-                      <div className="bg-gradient-to-r from-yellow-400 to-primary px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded-lg border-2 border-foreground/20 shadow-lg">
+                      <Button
+                        onClick={() => handleWhatsApp(motor.name + " - " + motor.subtitle)}
+                        className="w-full bg-gradient-to-r from-yellow-400 to-primary hover:from-yellow-500 hover:to-primary/90 px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded-lg border-2 border-foreground/20 shadow-lg transition-all hover:scale-105"
+                      >
                         <div className="font-montserrat text-xs sm:text-sm md:text-base lg:text-xl font-black text-foreground leading-tight">
                           {motor.installments}
                         </div>
-                      </div>
+                      </Button>
                     </div>
                   </div>)}
               </div>

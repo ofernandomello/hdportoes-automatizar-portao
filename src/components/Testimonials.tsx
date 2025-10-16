@@ -7,39 +7,21 @@ const Testimonials = () => {
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
   const testimonials = [
     {
-      name: "Carlos Mendes",
-      location: "São Paulo, SP",
-      text: "Melhor investimento que fiz na minha casa! Não preciso mais me preocupar ao chegar tarde da noite. A instalação foi rápida e o pessoal muito profissional.",
+      name: "Cleide Santos",
+      location: "Cliente Google",
+      text: "Foi uma surpresa, fui atendida pelo profissional Adriano, excelente atendimento, atendente Jaqueline onde me proporcionou o melhor preço e qualidade, recomendo sem medo a melhor empresa do ramo, amei.",
       rating: 5
     },
     {
-      name: "Ana Paula Silva",
-      location: "Campinas, SP",
-      text: "Estava com medo de investir, mas valeu muito a pena. O parcelamento em 10x facilitou demais. Agora meus filhos chegam em casa com segurança.",
+      name: "Arthur Barbosa",
+      location: "Cliente Google",
+      text: "Jaqueline foi incrivelmente prestativa, e já tenho o portão instalado e o motor está funcionando perfeitamente. Gostaria de destacar o técnico que veio instalar (Marcos). Ele fez um ótimo trabalho, explicou tudo claramente, não deixou bagunça e me deu todas as instruções de manutenção. Estou muito satisfeito!",
       rating: 5
     },
     {
-      name: "Roberto Oliveira",
-      location: "Santo André, SP",
-      text: "Automatizei o portão e coloquei a trava antiarrombamento. Durmo muito mais tranquilo sabendo que minha família está protegida. Recomendo!",
-      rating: 5
-    },
-    {
-      name: "Juliana Costa",
-      location: "São Bernardo, SP",
-      text: "Achei que seria muito caro, mas o preço estava dentro do orçamento. O melhor é que não preciso mais descer do carro na chuva!",
-      rating: 5
-    },
-    {
-      name: "Marcos Ferreira",
-      location: "Guarulhos, SP",
-      text: "Equipe pontual e serviço impecável. Explicaram tudo sobre a manutenção e deixaram tudo funcionando perfeitamente. Muito satisfeito!",
-      rating: 5
-    },
-    {
-      name: "Patricia Santos",
-      location: "Osasco, SP",
-      text: "A praticidade que trouxe para o dia a dia é incrível. Meus vizinhos viram e já pediram indicação. Valorizou muito minha casa!",
+      name: "Anderson Souza",
+      location: "Cliente Google - Guia Local",
+      text: "Excelente pré-atendimento via WhatsApp; nunca vi um atendimento tão rápido e eficiente. Gostei do serviço prestado pelo técnico que veio à minha casa; ele foi muito profissional e atencioso.",
       rating: 5
     }
   ];
@@ -90,13 +72,13 @@ const Testimonials = () => {
         {/* Trust badges */}
         <div className="mt-12 md:mt-16 flex flex-wrap justify-center items-center gap-6 md:gap-8 text-center px-4">
           <div>
-            <div className="font-montserrat text-3xl md:text-4xl font-bold text-primary mb-2">500+</div>
-            <div className="text-muted-foreground text-sm md:text-base">Portões Automatizados</div>
+            <div className="font-montserrat text-3xl md:text-4xl font-bold text-primary mb-2">241</div>
+            <div className="text-muted-foreground text-sm md:text-base">Avaliações no Google</div>
           </div>
           <div className="h-12 w-px bg-border hidden md:block" />
           <div>
-            <div className="font-montserrat text-3xl md:text-4xl font-bold text-primary mb-2">98%</div>
-            <div className="text-muted-foreground text-sm md:text-base">Satisfação dos Clientes</div>
+            <div className="font-montserrat text-3xl md:text-4xl font-bold text-primary mb-2">5.0★</div>
+            <div className="text-muted-foreground text-sm md:text-base">Nota no Google</div>
           </div>
           <div className="h-12 w-px bg-border hidden md:block" />
           <div>

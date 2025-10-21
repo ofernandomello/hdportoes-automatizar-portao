@@ -3,8 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { useToast } from "@/hooks/use-toast";
+import { sendToWebhook } from "@/lib/utm-tracker";
 
 const ContactForm = () => {
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     cidade: "",
     bairro: "",
@@ -14,11 +17,13 @@ const ContactForm = () => {
     telefone: "",
     email: ""
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const whatsappNumber = "5511999999999";
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setIsSubmitting(true);
     
     const motorTexto = {
       "leve": "Abertura em 4 Segundos - Portão Leve (350kg) - 10x R$ 167,00",
@@ -30,18 +35,59 @@ const ContactForm = () => {
       ? "Automatização" 
       : "Automatização + Trava Automática";
 
-    const message = encodeURIComponent(
-      `Olá! Gostaria de um orçamento:\n\n` +
-      `👤 Nome: ${formData.nome}\n` +
-      `📞 Telefone: ${formData.telefone}\n` +
-      `📧 Email: ${formData.email}\n\n` +
-      `📍 Cidade: ${formData.cidade}\n` +
-      `📍 Bairro: ${formData.bairro}\n` +
-      `🔧 Serviço: ${tipoTexto}\n` +
-      `🚗 Motor: ${motorTexto[formData.motor as keyof typeof motorTexto]}`
-    );
+    // Envia dados para o webhook
+    const webhookResult = await sendToWebhook({
+      nome: formData.nome,
+      telefone: formData.telefone,
+      email: formData.email,
+      cidade: formData.cidade,
+      bairro: formData.bairro,
+      tipo_servico: tipoTexto,
+      motor: motorTexto[formData.motor as keyof typeof motorTexto],
+      form_source: 'ContactForm'
+    });
 
-    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+    if (webhookResult.success) {
+      toast({
+        title: "Dados enviados com sucesso!",
+        description: "Você será redirecionado para o WhatsApp.",
+      });
+
+      const message = encodeURIComponent(
+        `Olá! Gostaria de um orçamento:\n\n` +
+        `👤 Nome: ${formData.nome}\n` +
+        `📞 Telefone: ${formData.telefone}\n` +
+        `📧 Email: ${formData.email}\n\n` +
+        `📍 Cidade: ${formData.cidade}\n` +
+        `📍 Bairro: ${formData.bairro}\n` +
+        `🔧 Serviço: ${tipoTexto}\n` +
+        `🚗 Motor: ${motorTexto[formData.motor as keyof typeof motorTexto]}`
+      );
+
+      window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+    } else {
+      toast({
+        title: "Erro ao enviar dados",
+        description: "Houve um problema, mas você pode continuar pelo WhatsApp.",
+        variant: "destructive"
+      });
+
+      // Mesmo com erro no webhook, permite envio pelo WhatsApp
+      const message = encodeURIComponent(
+        `Olá! Gostaria de um orçamento:\n\n` +
+        `👤 Nome: ${formData.nome}\n` +
+        `📞 Telefone: ${formData.telefone}\n` +
+        `📧 Email: ${formData.email}\n\n` +
+        `📍 Cidade: ${formData.cidade}\n` +
+        `📍 Bairro: ${formData.bairro}\n` +
+        `🔧 Serviço: ${tipoTexto}\n` +
+        `🚗 Motor: ${motorTexto[formData.motor as keyof typeof motorTexto]}`
+      );
+
+      window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+    }
+
+    setIsSubmitting(false);
   };
 
   return (
@@ -191,9 +237,10 @@ const ContactForm = () => {
             <Button 
               type="submit"
               size="lg"
-              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-montserrat font-semibold text-lg py-6 rounded-xl shadow-[0_20px_50px_-10px_hsl(142_76%_36%/0.4)] transition-all hover:scale-105"
+              disabled={isSubmitting}
+              className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-montserrat font-semibold text-lg py-6 rounded-xl shadow-[0_20px_50px_-10px_hsl(142_76%_36%/0.4)] transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Enviar via WhatsApp
+              {isSubmitting ? "Enviando..." : "Enviar via WhatsApp"}
             </Button>
           </form>
         </div>

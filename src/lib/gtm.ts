@@ -87,3 +87,36 @@ export const pushFormSubmitEvent = (formName: string, formData: {
   window.dataLayer.push(eventData);
   console.log('🏷️ GTM Event Pushed:', eventData);
 };
+
+/**
+ * Obtém dados de geolocalização via API ipapi.co e envia ao dataLayer
+ * Deve ser chamado uma vez após o carregamento da página
+ */
+export const pushGeoLocationData = async () => {
+  initDataLayer();
+  
+  try {
+    const response = await fetch('https://ipapi.co/json/');
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    
+    const data = await response.json();
+    
+    const geoData = {
+      event: 'user_geolocation',
+      geo_data: {
+        postal: (data.postal || '').toLowerCase(),
+        city: (data.city || '').toLowerCase(),
+        region_code: (data.region_code || '').toLowerCase(),
+        country_code: (data.country_code || '').toLowerCase()
+      }
+    };
+    
+    window.dataLayer.push(geoData);
+    console.log('🌍 GTM Geo Data Pushed:', geoData);
+  } catch (error) {
+    console.error('❌ Erro ao obter dados de geolocalização:', error);
+  }
+};

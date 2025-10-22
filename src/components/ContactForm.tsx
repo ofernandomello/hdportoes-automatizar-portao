@@ -5,6 +5,8 @@ import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { useToast } from "@/hooks/use-toast";
 import { sendToWebhook } from "@/lib/utm-tracker";
+import { formatPhoneBR } from "@/lib/phone-mask";
+import { pushFormSubmitEvent } from "@/lib/gtm";
 
 const ContactForm = () => {
   const { toast } = useToast();
@@ -48,6 +50,17 @@ const ContactForm = () => {
     });
 
     if (webhookResult.success) {
+      // Dispara evento para GTM após envio bem-sucedido
+      pushFormSubmitEvent('contact_form', {
+        nome: formData.nome,
+        email: formData.email,
+        telefone: formData.telefone,
+        cidade: formData.cidade,
+        bairro: formData.bairro,
+        tipo_servico: tipoTexto,
+        motor: motorTexto[formData.motor as keyof typeof motorTexto]
+      });
+
       toast({
         title: "Dados enviados com sucesso!",
         description: "Você será redirecionado para o WhatsApp.",
@@ -212,9 +225,10 @@ const ContactForm = () => {
                   required
                   type="tel"
                   value={formData.telefone}
-                  onChange={(e) => setFormData({...formData, telefone: e.target.value})}
+                  onChange={(e) => setFormData({...formData, telefone: formatPhoneBR(e.target.value)})}
                   placeholder="Ex: (11) 99999-9999"
                   className="h-12"
+                  maxLength={15}
                 />
               </div>
 

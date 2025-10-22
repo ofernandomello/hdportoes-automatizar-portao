@@ -1,9 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Shield, Check, Zap, CreditCard } from "lucide-react";
 const AntiTheftLock = () => {
-  const base = import.meta.env.BASE_URL; // Adicione esta linha para obter o base path
-
-  const whatsappNumber = "5511999999999";
+  const whatsappNumber = "5511921349917";
   const whatsappMessage = encodeURIComponent("Olá! Gostaria de saber mais sobre a trava automática antiarrombamento.");
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
   return <section className="py-20 bg-gradient-to-br from-background via-yellow-400/10 to-primary/20">
@@ -57,9 +55,9 @@ const AntiTheftLock = () => {
                 <video 
                   controls 
                   className="w-full h-full"
-                  poster={`${base}placeholder.svg`}
+                  poster="/placeholder.svg"
                 >
-                  <source src={`${base}video-trava.mp4`} type="video/mp4" />
+                  <source src="/video-trava.mp4" type="video/mp4" />
                   Seu navegador não suporta vídeos.
                 </video>
               </div>

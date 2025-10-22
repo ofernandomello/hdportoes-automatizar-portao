@@ -6,7 +6,7 @@ import motorB from "@/assets/motor-b.jpeg";
 import motorC from "@/assets/motor-c.jpeg";
 import logoPPA from "@/assets/logo-ppa.webp";
 const Motors = () => {
-  const whatsappNumber = "5511999999999";
+  const whatsappNumber = "5511921349917";
   const motors = [{
     name: "Abertura em 4 Segundos",
     subtitle: "Portão Leve (350kg)",

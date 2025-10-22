@@ -2,7 +2,7 @@ import { Shield, Clock, TrendingUp, Wrench, CheckCircle2, Lock } from "lucide-re
 import { Button } from "@/components/ui/button";
 
 const Benefits = () => {
-  const whatsappNumber = "5511999999999";
+  const whatsappNumber = "5511921349917";
   const whatsappMessage = encodeURIComponent("Olá! Quero automatizar meu portão em 4 segundos.");
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 

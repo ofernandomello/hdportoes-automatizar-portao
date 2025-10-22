@@ -2,7 +2,7 @@ import { Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Testimonials = () => {
-  const whatsappNumber = "5511999999999";
+  const whatsappNumber = "5511921349917";
   const whatsappMessage = encodeURIComponent("Olá! Vi os depoimentos e quero automatizar meu portão com Motor PPA.");
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
   const testimonials = [

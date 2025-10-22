@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import heroGate from "@/assets/hero-gate.jpg";
 const Hero = () => {
-  const whatsappNumber = "5511999999999"; // Número do WhatsApp
+  const whatsappNumber = "5511921349917"; // Número do WhatsApp
   const whatsappMessage = encodeURIComponent("Olá! Gostaria de saber mais sobre a automatização de portões.");
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
   return <section className="relative min-h-[600px] md:min-h-[700px] lg:min-h-[800px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary/10 via-background to-yellow-400/10">
@@ -66,8 +66,6 @@ const Hero = () => {
     </section>;
 };
 const VideoSection = () => {
-  const base = import.meta.env.BASE_URL; // Adicione esta linha para obter o base path
-
   return <section className="py-16 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
@@ -83,9 +81,9 @@ const VideoSection = () => {
             <video 
               controls 
               className="w-full h-full"
-              poster={`${base}placeholder.svg`}
+              poster="/placeholder.svg"
             >
-              <source src={`${base}video-secao-2.mp4`} type="video/mp4" />
+              <source src="/video-secao-2.mp4" type="video/mp4" />
               Seu navegador não suporta vídeos.
             </video>
           </div>

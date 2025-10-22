@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 
 const Footer = () => {
-  const whatsappNumber = "5511999999999";
+  const whatsappNumber = "5511921349917";
   const whatsappMessage = encodeURIComponent("Olá! Gostaria de automatizar meu portão.");
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 

@@ -20,7 +20,7 @@ export const getUTMParams = () => {
  * Envia dados do formulário para o webhook do Make
  */
 export const sendToWebhook = async (formData: Record<string, any>) => {
-  const webhookUrl = 'https://hook.us1.make.com/081xj6h9mpbt48rhs8l1c4vtprq3l649';
+  const webhookUrl = 'https://hook.us2.make.com/yuffaztksh1xxuucp1ohcissomaq8isf';
   
   // Combina dados do formulário com UTMs
   const payload = {

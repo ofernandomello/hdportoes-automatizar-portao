@@ -66,6 +66,8 @@ const Hero = () => {
     </section>;
 };
 const VideoSection = () => {
+  const base = import.meta.env.BASE_URL; // Adicione esta linha para obter o base path
+
   return <section className="py-16 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">
@@ -81,9 +83,9 @@ const VideoSection = () => {
             <video 
               controls 
               className="w-full h-full"
-              poster="/placeholder.svg"
+              poster={`${base}placeholder.svg`}
             >
-              <source src="/video-secao-2.mp4" type="video/mp4" />
+              <source src={`${base}video-secao-2.mp4`} type="video/mp4" />
               Seu navegador não suporta vídeos.
             </video>
           </div>

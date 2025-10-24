@@ -54,23 +54,27 @@ const Benefits = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
           {benefits.map((benefit, index) => {
             const Icon = benefit.icon;
             return (
               <div 
                 key={index}
-                className="bg-background rounded-2xl p-6 md:p-8 shadow-[0_8px_30px_-4px_hsl(0_0%_0%/0.15)] hover:shadow-[0_12px_40px_-4px_hsl(24_100%_50%/0.3)] transition-all hover:-translate-y-1 border-4 border-primary/50"
+                className="bg-background rounded-2xl p-4 md:p-6 shadow-[0_8px_30px_-4px_hsl(0_0%_0%/0.15)] hover:shadow-[0_12px_40px_-4px_hsl(24_100%_50%/0.3)] transition-all hover:-translate-y-1 border-4 border-primary/50"
               >
-                <div className="bg-gradient-to-br from-yellow-400 to-primary w-14 h-14 md:w-16 md:h-16 rounded-xl flex items-center justify-center mb-4 md:mb-6 shadow-lg">
-                  <Icon className="h-6 w-6 md:h-8 md:w-8 text-foreground" />
+                <div className="flex items-center gap-3 md:gap-4">
+                  <div className="bg-gradient-to-br from-yellow-400 to-primary w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center shrink-0 shadow-lg">
+                    <Icon className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="font-montserrat text-base md:text-lg font-black text-card-foreground mb-1">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed text-xs md:text-sm">
+                      {benefit.description}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="font-montserrat text-lg md:text-xl font-black text-card-foreground mb-2 md:mb-3">
-                  {benefit.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
-                  {benefit.description}
-                </p>
               </div>
             );
           })}

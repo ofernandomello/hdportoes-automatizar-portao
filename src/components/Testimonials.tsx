@@ -38,30 +38,30 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-5xl mx-auto">
           {testimonials.map((testimonial, index) => (
             <div 
               key={index}
-              className="bg-card rounded-2xl p-4 sm:p-6 md:p-8 shadow-[0_4px_20px_-2px_hsl(0_0%_0%/0.08)] hover:shadow-[0_8px_30px_-4px_hsl(0_0%_0%/0.12)] transition-all"
+              className="bg-card rounded-2xl p-4 sm:p-5 md:p-6 shadow-[0_4px_20px_-2px_hsl(0_0%_0%/0.08)] hover:shadow-[0_8px_30px_-4px_hsl(0_0%_0%/0.12)] transition-all"
             >
               {/* Rating */}
-              <div className="flex gap-1 mb-4">
+              <div className="flex gap-1 mb-3">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="h-5 w-5 fill-primary text-primary" />
+                  <Star key={i} className="h-4 w-4 fill-primary text-primary" />
                 ))}
               </div>
 
               {/* Text */}
-              <p className="text-card-foreground mb-6 leading-relaxed italic">
+              <p className="text-card-foreground mb-4 leading-relaxed italic text-sm">
                 "{testimonial.text}"
               </p>
 
               {/* Author */}
-              <div className="border-t border-border pt-4">
-                <div className="font-montserrat font-semibold text-card-foreground">
+              <div className="border-t border-border pt-3">
+                <div className="font-montserrat font-semibold text-card-foreground text-sm">
                   {testimonial.name}
                 </div>
-                <div className="text-muted-foreground text-sm">
+                <div className="text-muted-foreground text-xs">
                   {testimonial.location}
                 </div>
               </div>

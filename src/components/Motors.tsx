@@ -41,7 +41,7 @@ const Motors = () => {
           <div className="bg-yellow-400/30 border-2 border-yellow-400/50 rounded-xl px-6 py-4 max-w-3xl mx-auto">
             <p className="font-montserrat text-base md:text-lg text-foreground">
               Trabalhamos com o Motor PPA, a melhor marca do mercado.{" "}
-              <span className="font-black">Parcelamento em até 10x sem juros.</span>
+              <span className="font-black block">Parcelamento em até 10x sem juros.</span>
             </p>
           </div>
         </div>
@@ -49,16 +49,17 @@ const Motors = () => {
         {/* Banner Principal */}
         <div className="max-w-7xl mx-auto mb-8">
           <div className="bg-gradient-to-r from-yellow-400 via-primary to-yellow-500 rounded-2xl shadow-2xl overflow-hidden border-4 border-foreground">
-            <div className="flex items-center justify-between px-6 md:px-8 py-4 md:py-6">
-              <h2 className="font-montserrat text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-foreground">
-                Motor PPA em 10x s/ juros com o kit instalado
+            <div className="flex flex-col-reverse items-center justify-between px-6 md:flex-row md:px-8 py-4 md:py-6">
+              <h2 className="font-montserrat text-center text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black text-foreground md:text-left">
+                Motor Ultra rápido PPA
+                <span className="block">Pagamento após a instalação</span>
               </h2>
-              <img src={logoPPA} alt="PPA Logo" className="h-12 md:h-16 lg:h-20 object-contain bg-background rounded px-3 py-2" />
+              <img src={logoPPA} alt="PPA Logo" className="h-12 md:h-16 lg:h-20 object-contain bg-background rounded px-3 py-2 mb-3" />
             </div>
             
             {/* Motors Grid */}
             <div className="bg-gradient-to-br from-yellow-400/80 to-primary/80 px-4 md:px-8 py-6 md:py-8">
-              <div className="grid grid-cols-3 gap-2 sm:gap-3 md:gap-4 lg:gap-6">
+              <div className="grid grid-cols-[minmax(200px,300px)] justify-center gap-6 sm:grid-cols-3 sm:gap-3 md:gap-4 lg:gap-6">
                 {motors.map((motor, index) => <div key={index} className={`relative bg-background rounded-xl p-2 sm:p-3 md:p-4 lg:p-6 transition-all border-2 shadow-lg ${motor.isHighlight ? 'border-foreground ring-4 ring-yellow-400' : 'border-primary/50'}`}>
                     {motor.isHighlight && <Badge className="absolute -top-2 left-1/2 -translate-x-1/2 text-foreground px-1.5 sm:px-2 py-0.5 sm:py-1 font-montserrat font-black text-[8px] sm:text-[10px] bg-yellow-400 border-2 border-foreground shadow-lg animate-pulse whitespace-nowrap">
                         <Star className="h-2 w-2 sm:h-3 sm:w-3 mr-0.5 inline fill-current" />
@@ -104,6 +105,10 @@ const Motors = () => {
         <div className="max-w-7xl mx-auto">
           <div className="bg-background border-2 border-primary rounded-xl p-4 md:p-6 shadow-lg text-center">
             <p className="font-montserrat text-sm md:text-base lg:text-lg font-bold text-foreground mb-4">
+              Todos os modelos acompanham 3 controles anticlonagem.
+
+            </p>
+            <p className="font-montserrat text-sm md:text-base lg:text-lg text-foreground mb-4">
               Quer ajuda para escolher a melhor opção?
             </p>
             <Button 

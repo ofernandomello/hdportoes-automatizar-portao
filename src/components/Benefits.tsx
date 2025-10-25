@@ -40,7 +40,7 @@ const Benefits = () => {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-yellow-400/20 via-background to-primary/10">
+    <section className="py-20 pb-0 bg-gradient-to-br from-yellow-400/20 via-background to-primary/10">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
           <div className="inline-block bg-primary text-primary-foreground px-6 py-2 rounded-lg mb-4 shadow-lg">
@@ -54,13 +54,13 @@ const Benefits = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid grid-cols-[minmax(300px,400px)] justify-center md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {benefits.map((benefit, index) => {
             const Icon = benefit.icon;
             return (
               <div 
                 key={index}
-                className="bg-background rounded-2xl p-6 md:p-8 shadow-[0_8px_30px_-4px_hsl(0_0%_0%/0.15)] hover:shadow-[0_12px_40px_-4px_hsl(24_100%_50%/0.3)] transition-all hover:-translate-y-1 border-4 border-primary/50"
+                className="bg-background rounded-2xl p-6 md:p-8 shadow-[0_8px_30px_-4px_hsl(0_0%_0%/0.15)] hover:shadow-[0_12px_40px_-4px_hsl(24_100%_50%/0.3)] transition-all hover:-translate-y-1 border-4 border-primary/50 flex flex-col items-center text-center"
               >
                 <div className="bg-gradient-to-br from-yellow-400 to-primary w-14 h-14 md:w-16 md:h-16 rounded-xl flex items-center justify-center mb-4 md:mb-6 shadow-lg">
                   <Icon className="h-6 w-6 md:h-8 md:w-8 text-foreground" />
@@ -79,7 +79,7 @@ const Benefits = () => {
         <div className="text-center mt-12">
           <Button 
             size="lg"
-            className="bg-primary hover:bg-primary/90 text-primary-foreground font-montserrat font-black text-base md:text-xl px-8 md:px-12 py-6 md:py-7 rounded-xl shadow-lg hover:scale-105 transition-all border-2 border-primary"
+            className="whitespace-normal bg-primary hover:bg-primary/90 text-primary-foreground font-montserrat font-black text-base md:text-xl px-8 md:px-12 py-6 md:py-7 rounded-xl shadow-lg hover:scale-105 transition-all border-2 border-primary"
             onClick={() => window.open(whatsappLink, '_blank')}
           >
             📞 AUTOMATIZAR MEU PORTÃO AGORA

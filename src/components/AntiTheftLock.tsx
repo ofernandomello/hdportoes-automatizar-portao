@@ -11,14 +11,14 @@ const AntiTheftLock = () => {
             <p className="font-montserrat font-black text-lg md:text-xl uppercase">🔒 PROTEÇÃO MÁXIMA 🔒</p>
           </div>
           <h2 className="font-montserrat text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-foreground mb-3 md:mb-4 px-4">
-            Trava Automática Antiarrombamento
+            Trava Automática Anti-arrombamento
           </h2>
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-foreground font-bold max-w-2xl mx-auto px-4 bg-yellow-400/30 py-3 rounded-lg border-2 border-primary/30">
             Além da automatização, oferecemos travas automáticas que garantem proteção total contra invasões
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center max-w-6xl mx-auto">
+        <div className="grid grid-cols-[minmax(300px,400px)] justify-center lg:grid-cols-2 gap-8 md:gap-12 items-center max-w-6xl mx-auto">
           {/* Content */}
           <div>
             <div className="space-y-4 mb-8">
@@ -36,7 +36,7 @@ const AntiTheftLock = () => {
               text: "Pagamento no cartão após a instalação"
             }].map((item, index) => {
               const Icon = item.icon;
-              return <div key={index} className="flex items-start gap-4 bg-background p-4 rounded-xl border-2 border-primary/30 shadow-md">
+              return <div key={index} className="flex items-center gap-4 bg-background p-4 rounded-xl border-2 border-primary/30 shadow-md">
                     <div className="bg-gradient-to-br from-yellow-400 to-primary p-3 rounded-lg flex-shrink-0 shadow-lg">
                       <Icon className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                     </div>
@@ -55,7 +55,7 @@ const AntiTheftLock = () => {
                 <video 
                   controls 
                   className="w-full h-full"
-                  poster="/placeholder.svg"
+                  poster="/src/assets/thumb-video-trava.png"
                 >
                   <source src="/video-trava.mp4" type="video/mp4" />
                   Seu navegador não suporta vídeos.
@@ -68,7 +68,7 @@ const AntiTheftLock = () => {
               +100 instalações
             </div>
             <div className="absolute -bottom-3 sm:-bottom-4 -left-2 sm:-left-4 bg-primary text-primary-foreground px-2 sm:px-3 md:px-4 lg:px-6 py-2 md:py-3 rounded-lg md:rounded-xl font-montserrat font-black shadow-lg border-2 border-primary-foreground text-[10px] sm:text-xs md:text-sm lg:text-base whitespace-nowrap">
-              Garantia 2 anos
+              1 Ano de Garantia
             </div>
           </div>
         </div>

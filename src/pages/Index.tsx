@@ -22,8 +22,8 @@ const Index = () => {
       <Header />
       <Hero />
       <VideoSection />
-      <Benefits />
       <Motors />
+      <Benefits />      
       <AntiTheftLock />
       <Testimonials />
       <FAQ />

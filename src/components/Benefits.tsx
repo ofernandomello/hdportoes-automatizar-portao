@@ -62,7 +62,7 @@ const Benefits = () => {
                 key={index}
                 className="bg-background rounded-2xl p-6 md:p-8 shadow-[0_8px_30px_-4px_hsl(0_0%_0%/0.15)] hover:shadow-[0_12px_40px_-4px_hsl(24_100%_50%/0.3)] transition-all hover:-translate-y-1 border-4 border-primary/50 flex flex-col items-center text-center"
               >
-                <div className="flex items-center gap-3 md:gap-4">
+                <div className="flex flex-col items-center gap-3 md:gap-4">
                   <div className="bg-gradient-to-br from-yellow-400 to-primary w-12 h-12 md:w-14 md:h-14 rounded-xl flex items-center justify-center shrink-0 shadow-lg">
                     <Icon className="h-5 w-5 md:h-6 md:w-6 text-foreground" />
                   </div>

@@ -23,7 +23,7 @@ const Index = () => {
       <Hero />
       <VideoSection />
       <Motors />
-      <Benefits />
+      <Benefits />      
       <AntiTheftLock />
       <Testimonials />
       <FAQ />

@@ -84,7 +84,7 @@ const VideoSection = () => {
             <video 
               controls 
               className="w-full h-full"
-              poster="/placeholder.svg"
+              poster="/src/assets/thumb-video-secao-2.png"
             >
               <source src="/video-secao-2.mp4" type="video/mp4" />
               Seu navegador não suporta vídeos.

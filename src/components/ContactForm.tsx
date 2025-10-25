@@ -173,7 +173,7 @@ const ContactForm = () => {
 
             <div className="space-y-3">
               <Label className="text-base font-montserrat">
-                Qual motor você deseja: *
+                Qual é o motor ideal para o seu portão? *
               </Label>
               <RadioGroup
                 value={formData.motor}
@@ -183,19 +183,19 @@ const ContactForm = () => {
                 <div className="flex items-center space-x-3 bg-background/50 p-4 rounded-lg">
                   <RadioGroupItem value="leve" id="leve" />
                   <Label htmlFor="leve" className="cursor-pointer flex-1 font-normal">
-                    Abertura em 4 Segundos - Portão Leve (350kg) - <span className="text-primary font-semibold">10x R$ 167,00</span>
+                    Para portão Leve (350kg) - <span className="text-primary font-semibold">(10x R$ 167)</span>
                   </Label>
                 </div>
                 <div className="flex items-center space-x-3 bg-background/50 p-4 rounded-lg">
                   <RadioGroupItem value="intermediario" id="intermediario" />
                   <Label htmlFor="intermediario" className="cursor-pointer flex-1 font-normal">
-                    Abertura em 4 Segundos - Portão Intermediário (400kg) - <span className="text-primary font-semibold">10x R$ 187,00</span>
+                    Para portão Intermediário (400kg) - <span className="text-primary font-semibold">(10x R$ 187)</span>
                   </Label>
                 </div>
                 <div className="flex items-center space-x-3 bg-background/50 p-4 rounded-lg">
                   <RadioGroupItem value="pesado" id="pesado" />
                   <Label htmlFor="pesado" className="cursor-pointer flex-1 font-normal">
-                    Abertura em 4 Segundos - Portão Pesado (450kg) - <span className="text-primary font-semibold">10x R$ 207,00</span>
+                    Para portão Pesado (450kg) - <span className="text-primary font-semibold">(10x R$ 207)</span>
                   </Label>
                 </div>
               </RadioGroup>

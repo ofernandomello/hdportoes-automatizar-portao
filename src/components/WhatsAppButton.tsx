@@ -193,7 +193,7 @@ const WhatsAppButton = () => {
 
             <div className="space-y-3">
               <Label className="text-base font-montserrat">
-                Preferência de tempo de abertura do portão: *
+                Qual é o motor ideal para o seu portão? *
               </Label>
               <RadioGroup
                 value={formData.velocidade}
@@ -203,19 +203,19 @@ const WhatsAppButton = () => {
                 <div className="flex items-center space-x-3 bg-background/50 p-3 rounded-lg">
                   <RadioGroupItem value="4s" id="popup-4s" />
                   <Label htmlFor="popup-4s" className="cursor-pointer flex-1 font-normal text-sm sm:text-base">
-                    Em até 4s <span className="text-primary font-semibold">(10x a partir de R$ 269)</span>
+                    Para portão Leve 350kg <span className="text-primary font-semibold">(10x R$167)</span>
                   </Label>
                 </div>
                 <div className="flex items-center space-x-3 bg-background/50 p-3 rounded-lg">
                   <RadioGroupItem value="9s" id="popup-9s" />
                   <Label htmlFor="popup-9s" className="cursor-pointer flex-1 font-normal text-sm sm:text-base">
-                    Em até 9s <span className="text-primary font-semibold">(10x a partir de R$ 189)</span>
+                    Para portão Intermediário 400kg <span className="text-primary font-semibold">(10x R$ 187)</span>
                   </Label>
                 </div>
                 <div className="flex items-center space-x-3 bg-background/50 p-3 rounded-lg">
                   <RadioGroupItem value="16s" id="popup-16s" />
                   <Label htmlFor="popup-16s" className="cursor-pointer flex-1 font-normal text-sm sm:text-base">
-                    Em até 16s <span className="text-primary font-semibold">(10x a partir de R$ 129)</span>
+                    Para portão Pesado 450kg <span className="text-primary font-semibold">(10x R$ 207)</span>
                   </Label>
                 </div>
               </RadioGroup>

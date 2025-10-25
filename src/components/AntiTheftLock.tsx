@@ -55,7 +55,7 @@ const AntiTheftLock = () => {
                 <video 
                   controls 
                   className="w-full h-full"
-                  poster="/src/assets/thumb-video-trava.png"
+                  poster="/thumb-video-trava.png"
                 >
                   <source src="/video-trava.mp4" type="video/mp4" />
                   Seu navegador não suporta vídeos.

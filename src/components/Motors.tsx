@@ -5,8 +5,10 @@ import motorA from "@/assets/motor-a.jpeg";
 import motorB from "@/assets/motor-b.jpeg";
 import motorC from "@/assets/motor-c.jpeg";
 import logoPPA from "@/assets/logo-ppa.webp";
+import { useWhatsAppDialog } from "@/hooks/use-whatsapp-dialog";
+
 const Motors = () => {
-  const whatsappNumber = "5511921349917";
+  const { openDialog } = useWhatsAppDialog();
   const motors = [{
     name: "Abertura em 4 Segundos",
     subtitle: "Portão Leve (350kg)",
@@ -24,9 +26,8 @@ const Motors = () => {
     installments: "10x R$ 207,00",
     image: motorC
   }];
-  const handleWhatsApp = (motorName: string) => {
-    const message = encodeURIComponent(`Olá! Tenho interesse no ${motorName}. Gostaria de mais informações.`);
-    window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+  const handleWhatsApp = () => {
+    openDialog();
   };
   return <section id="motores" className="py-20 bg-gradient-to-br from-yellow-400/20 via-background to-primary/10">
       <div className="container mx-auto px-4">
@@ -87,7 +88,7 @@ const Motors = () => {
 
                     <div className="text-center">
                       <Button
-                        onClick={() => handleWhatsApp(motor.name + " - " + motor.subtitle)}
+                        onClick={handleWhatsApp}
                         className="w-full bg-gradient-to-r from-yellow-400 to-primary hover:from-yellow-500 hover:to-primary/90 px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded-lg border-2 border-foreground/20 shadow-lg transition-all hover:scale-105"
                       >
                         <div className="font-montserrat text-xs sm:text-sm md:text-base lg:text-xl font-black text-foreground leading-tight">
@@ -113,10 +114,7 @@ const Motors = () => {
             </p>
             <Button 
               className="w-full max-w-md mx-auto bg-primary hover:bg-primary/90 text-primary-foreground font-montserrat font-black text-xs sm:text-sm md:text-base px-4 py-4 md:py-6 rounded-xl shadow-lg transition-all hover:scale-105 border-2 border-primary"
-              onClick={() => {
-                const message = encodeURIComponent("Olá! Preciso de ajuda para escolher o melhor motor PPA para meu portão.");
-                window.open(`https://wa.me/5511921349917?text=${message}`, '_blank');
-              }}
+              onClick={openDialog}
             >
               Quero ajuda para escolher
             </Button>

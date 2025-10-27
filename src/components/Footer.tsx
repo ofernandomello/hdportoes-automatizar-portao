@@ -1,10 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { useWhatsAppDialog } from "@/hooks/use-whatsapp-dialog";
 
 const Footer = () => {
-  const whatsappNumber = "5511921349917";
-  const whatsappMessage = encodeURIComponent("Olá! Gostaria de automatizar meu portão.");
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+  const { openDialog } = useWhatsAppDialog();
 
   return (
     <footer className="bg-foreground text-background">
@@ -21,7 +20,7 @@ const Footer = () => {
             <Button 
               size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-montserrat font-semibold text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-12 py-5 md:py-6 rounded-xl shadow-[0_20px_50px_-10px_hsl(142_76%_36%/0.4)] transition-all hover:scale-105"
-              onClick={() => window.open(whatsappLink, '_blank')}
+              onClick={openDialog}
             >
               <Phone className="mr-2 h-4 w-4 md:h-5 md:w-5" />
               <span className="hidden sm:inline">Solicitar Orçamento Personalizado</span>
@@ -40,15 +39,13 @@ const Footer = () => {
               Contato
             </h3>
             <div className="space-y-3">
-              <a 
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-3 text-background/80 hover:text-primary transition-colors"
+              <button 
+                onClick={openDialog}
+                className="flex items-center gap-3 text-background/80 hover:text-primary transition-colors cursor-pointer"
               >
                 <Phone className="h-5 w-5" />
                 <span>(11) 92134-9917</span>
-              </a>
+              </button>
               <a 
                 href="mailto:comercial.grupohd@gmail.com"
                 className="flex items-center gap-3 text-background/80 hover:text-primary transition-colors"

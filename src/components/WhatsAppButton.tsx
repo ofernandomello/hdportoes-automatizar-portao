@@ -14,10 +14,11 @@ import { useToast } from "@/hooks/use-toast";
 import { sendToWebhook } from "@/lib/utm-tracker";
 import { formatPhoneBR } from "@/lib/phone-mask";
 import { pushFormSubmitEvent } from "@/lib/gtm";
+import { useWhatsAppDialog } from "@/hooks/use-whatsapp-dialog";
 
 const WhatsAppButton = () => {
   const { toast } = useToast();
-  const [open, setOpen] = useState(false);
+  const { isOpen, openDialog, closeDialog } = useWhatsAppDialog();
   const [formData, setFormData] = useState({
     cidade: "",
     bairro: "",
@@ -86,7 +87,7 @@ const WhatsAppButton = () => {
       );
 
       window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
-      setOpen(false);
+      closeDialog();
     } else {
       toast({
         title: "Erro ao enviar dados",
@@ -107,7 +108,7 @@ const WhatsAppButton = () => {
       );
 
       window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
-      setOpen(false);
+      closeDialog();
     }
 
     setIsSubmitting(false);
@@ -116,7 +117,7 @@ const WhatsAppButton = () => {
   return (
     <>
       <button
-        onClick={() => setOpen(true)}
+        onClick={openDialog}
         className="fixed bottom-6 right-6 bg-[#25D366] hover:bg-[#20BA5A] text-white p-5 rounded-full shadow-[0_20px_50px_-10px_rgba(37,211,102,0.6)] transition-all hover:scale-110 z-50"
         aria-label="Solicitar orçamento via WhatsApp"
       >
@@ -125,7 +126,7 @@ const WhatsAppButton = () => {
         </svg>
       </button>
 
-      <Dialog open={open} onOpenChange={setOpen}>
+      <Dialog open={isOpen} onOpenChange={closeDialog}>
         <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
           <DialogHeader>
             <DialogTitle className="font-montserrat text-2xl sm:text-3xl">

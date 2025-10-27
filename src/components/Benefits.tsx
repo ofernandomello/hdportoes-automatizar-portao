@@ -1,10 +1,9 @@
 import { Shield, Clock, TrendingUp, Wrench, CheckCircle2, Lock } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useWhatsAppDialog } from "@/hooks/use-whatsapp-dialog";
 
 const Benefits = () => {
-  const whatsappNumber = "5511921349917";
-  const whatsappMessage = encodeURIComponent("Olá! Quero automatizar meu portão em 4 segundos.");
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+  const { openDialog } = useWhatsAppDialog();
 
   const benefits = [
     {
@@ -84,7 +83,7 @@ const Benefits = () => {
           <Button 
             size="lg"
             className="whitespace-normal bg-primary hover:bg-primary/90 text-primary-foreground font-montserrat font-black text-base md:text-xl px-8 md:px-12 py-6 md:py-7 rounded-xl shadow-lg hover:scale-105 transition-all border-2 border-primary"
-            onClick={() => window.open(whatsappLink, '_blank')}
+            onClick={openDialog}
           >
             📞 AUTOMATIZAR MEU PORTÃO AGORA
           </Button>

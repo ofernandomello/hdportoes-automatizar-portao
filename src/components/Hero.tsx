@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import heroGate from "@/assets/hero-gate.jpg";
+import { useWhatsAppDialog } from "@/hooks/use-whatsapp-dialog";
+
 const Hero = () => {
-  const whatsappNumber = "5511921349917"; // Número do WhatsApp
-  const whatsappMessage = encodeURIComponent("Olá! Gostaria de saber mais sobre a automatização de portões.");
-  const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+  const { openDialog } = useWhatsAppDialog();
   return <section className="relative min-h-[600px] md:min-h-[700px] lg:min-h-[800px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary/10 via-background to-yellow-400/10">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" style={{
@@ -51,10 +51,11 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center px-4">
-            <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-primary to-yellow-400 hover:from-primary/90 hover:to-yellow-400/90 text-foreground font-montserrat font-black text-sm sm:text-base md:text-lg lg:text-xl px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-5 md:py-6 lg:py-7 rounded-xl shadow-[0_8px_30px_hsl(24_100%_50%/0.6)] hover:shadow-[0_12px_40px_hsl(24_100%_50%/0.8)] transition-all border-2 border-foreground/20 animate-pulse" onClick={() => {
-            const message = encodeURIComponent("Olá! Quero automatizar meu portão. Gostaria de mais informações.");
-            window.open(`https://wa.me/5511921349917?text=${message}`, '_blank');
-          }}>
+            <Button 
+              size="lg" 
+              className="w-full sm:w-auto bg-gradient-to-r from-primary to-yellow-400 hover:from-primary/90 hover:to-yellow-400/90 text-foreground font-montserrat font-black text-sm sm:text-base md:text-lg lg:text-xl px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-5 md:py-6 lg:py-7 rounded-xl shadow-[0_8px_30px_hsl(24_100%_50%/0.6)] hover:shadow-[0_12px_40px_hsl(24_100%_50%/0.8)] transition-all border-2 border-foreground/20 animate-pulse" 
+              onClick={openDialog}
+            >
               🔥 AUTOMATIZAR MEU PORTÃO 🔥
             </Button>
             

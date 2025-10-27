@@ -23,7 +23,7 @@ const WhatsAppButton = () => {
     cidade: "",
     bairro: "",
     tipo: "automatizacao",
-    velocidade: "4s",
+    motor: "intermediario",
     nome: "",
     telefone: "",
     email: ""
@@ -36,10 +36,10 @@ const WhatsAppButton = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    const velocidadeTexto = {
-      "4s": "Em até 4s (10x a partir de R$ 269)",
-      "9s": "Em até 9s (10x a partir de R$ 189)",
-      "16s": "Em até 16s (10x a partir de R$ 129)"
+    const motorTexto = {
+      "leve": "Para Portão Leve (350kg) - 10x R$ 167,00",
+      "intermediario": "Para Portão Intermediário (400kg) - 10x R$ 187,00",
+      "pesado": "Para Portão Pesado (450kg) - 10x R$ 207,00"
     };
 
     const tipoTexto = formData.tipo === "automatizacao" 
@@ -54,7 +54,7 @@ const WhatsAppButton = () => {
       cidade: formData.cidade,
       bairro: formData.bairro,
       tipo_servico: tipoTexto,
-      velocidade: velocidadeTexto[formData.velocidade as keyof typeof velocidadeTexto],
+      motor: motorTexto[formData.motor as keyof typeof motorTexto],
       form_source: 'WhatsAppButton'
     });
 
@@ -67,7 +67,7 @@ const WhatsAppButton = () => {
         cidade: formData.cidade,
         bairro: formData.bairro,
         tipo_servico: tipoTexto,
-        velocidade: velocidadeTexto[formData.velocidade as keyof typeof velocidadeTexto]
+        motor: motorTexto[formData.motor as keyof typeof motorTexto]
       });
 
       toast({
@@ -77,13 +77,13 @@ const WhatsAppButton = () => {
 
       const message = encodeURIComponent(
         `Olá! Gostaria de um orçamento:\n\n` +
-        `👤 Nome: ${formData.nome}\n` +
-        `📞 Telefone: ${formData.telefone}\n` +
-        `📧 Email: ${formData.email}\n\n` +
-        `📍 Cidade: ${formData.cidade}\n` +
-        `📍 Bairro: ${formData.bairro}\n` +
-        `🔧 Serviço: ${tipoTexto}\n` +
-        `⚡ Velocidade: ${velocidadeTexto[formData.velocidade as keyof typeof velocidadeTexto]}`
+        `Nome: ${formData.nome}\n` +
+        `Telefone: ${formData.telefone}\n` +
+        `Email: ${formData.email}\n\n` +
+        `Cidade: ${formData.cidade}\n` +
+        `Bairro: ${formData.bairro}\n` +
+        `Orçamento para: ${tipoTexto}\n` +
+        `Motor ideal: ${motorTexto[formData.motor as keyof typeof motorTexto]}`
       );
 
       window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
@@ -98,13 +98,13 @@ const WhatsAppButton = () => {
       // Mesmo com erro no webhook, permite envio pelo WhatsApp
       const message = encodeURIComponent(
         `Olá! Gostaria de um orçamento:\n\n` +
-        `👤 Nome: ${formData.nome}\n` +
-        `📞 Telefone: ${formData.telefone}\n` +
-        `📧 Email: ${formData.email}\n\n` +
-        `📍 Cidade: ${formData.cidade}\n` +
-        `📍 Bairro: ${formData.bairro}\n` +
-        `🔧 Serviço: ${tipoTexto}\n` +
-        `⚡ Velocidade: ${velocidadeTexto[formData.velocidade as keyof typeof velocidadeTexto]}`
+        `Nome: ${formData.nome}\n` +
+        `Telefone: ${formData.telefone}\n` +
+        `Email: ${formData.email}\n\n` +
+        `Cidade: ${formData.cidade}\n` +
+        `Bairro: ${formData.bairro}\n` +
+        `Orçamento para: ${tipoTexto}\n` +
+        `Motor ideal: ${motorTexto[formData.motor as keyof typeof motorTexto]}`
       );
 
       window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
@@ -197,25 +197,25 @@ const WhatsAppButton = () => {
                 Qual é o motor ideal para o seu portão? *
               </Label>
               <RadioGroup
-                value={formData.velocidade}
-                onValueChange={(value) => setFormData({...formData, velocidade: value})}
+                value={formData.motor}
+                onValueChange={(value) => setFormData({...formData, motor: value})}
                 className="space-y-2"
               >
                 <div className="flex items-center space-x-3 bg-background/50 p-3 rounded-lg">
-                  <RadioGroupItem value="4s" id="popup-4s" />
-                  <Label htmlFor="popup-4s" className="cursor-pointer flex-1 font-normal text-sm sm:text-base">
+                  <RadioGroupItem value="leve" id="popup-leve" />
+                  <Label htmlFor="popup-leve" className="cursor-pointer flex-1 font-normal text-sm sm:text-base">
                     Para portão Leve 350kg <span className="text-primary font-semibold">(10x R$167)</span>
                   </Label>
                 </div>
                 <div className="flex items-center space-x-3 bg-background/50 p-3 rounded-lg">
-                  <RadioGroupItem value="9s" id="popup-9s" />
-                  <Label htmlFor="popup-9s" className="cursor-pointer flex-1 font-normal text-sm sm:text-base">
+                  <RadioGroupItem value="intermediario" id="popup-intermediario" />
+                  <Label htmlFor="popup-intermediario" className="cursor-pointer flex-1 font-normal text-sm sm:text-base">
                     Para portão Intermediário 400kg <span className="text-primary font-semibold">(10x R$ 187)</span>
                   </Label>
                 </div>
                 <div className="flex items-center space-x-3 bg-background/50 p-3 rounded-lg">
-                  <RadioGroupItem value="16s" id="popup-16s" />
-                  <Label htmlFor="popup-16s" className="cursor-pointer flex-1 font-normal text-sm sm:text-base">
+                  <RadioGroupItem value="pesado" id="popup-pesado" />
+                  <Label htmlFor="popup-pesado" className="cursor-pointer flex-1 font-normal text-sm sm:text-base">
                     Para portão Pesado 450kg <span className="text-primary font-semibold">(10x R$ 207)</span>
                   </Label>
                 </div>

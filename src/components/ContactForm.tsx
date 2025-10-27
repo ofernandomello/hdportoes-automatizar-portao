@@ -28,9 +28,9 @@ const ContactForm = () => {
     setIsSubmitting(true);
     
     const motorTexto = {
-      "leve": "Abertura em 4 Segundos - Portão Leve (350kg) - 10x R$ 167,00",
-      "intermediario": "Abertura em 4 Segundos - Portão Intermediário (400kg) - 10x R$ 187,00",
-      "pesado": "Abertura em 4 Segundos - Portão Pesado (450kg) - 10x R$ 207,00"
+      "leve": "Para Portão Leve (350kg) - 10x R$ 167,00",
+      "intermediario": "Para Portão Intermediário (400kg) - 10x R$ 187,00",
+      "pesado": "Para Portão Pesado (450kg) - 10x R$ 207,00"
     };
 
     const tipoTexto = formData.tipo === "automatizacao" 
@@ -68,13 +68,13 @@ const ContactForm = () => {
 
       const message = encodeURIComponent(
         `Olá! Gostaria de um orçamento:\n\n` +
-        `👤 Nome: ${formData.nome}\n` +
-        `📞 Telefone: ${formData.telefone}\n` +
-        `📧 Email: ${formData.email}\n\n` +
-        `📍 Cidade: ${formData.cidade}\n` +
-        `📍 Bairro: ${formData.bairro}\n` +
-        `🔧 Serviço: ${tipoTexto}\n` +
-        `🚗 Motor: ${motorTexto[formData.motor as keyof typeof motorTexto]}`
+        `Nome: ${formData.nome}\n` +
+        `Telefone: ${formData.telefone}\n` +
+        `Email: ${formData.email}\n\n` +
+        `Cidade: ${formData.cidade}\n` +
+        `Bairro: ${formData.bairro}\n` +
+        `Orçamento para: ${tipoTexto}\n` +
+        `Motor ideal: ${motorTexto[formData.motor as keyof typeof motorTexto]}`
       );
 
       window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
@@ -88,13 +88,13 @@ const ContactForm = () => {
       // Mesmo com erro no webhook, permite envio pelo WhatsApp
       const message = encodeURIComponent(
         `Olá! Gostaria de um orçamento:\n\n` +
-        `👤 Nome: ${formData.nome}\n` +
-        `📞 Telefone: ${formData.telefone}\n` +
-        `📧 Email: ${formData.email}\n\n` +
-        `📍 Cidade: ${formData.cidade}\n` +
-        `📍 Bairro: ${formData.bairro}\n` +
-        `🔧 Serviço: ${tipoTexto}\n` +
-        `🚗 Motor: ${motorTexto[formData.motor as keyof typeof motorTexto]}`
+        `Nome: ${formData.nome}\n` +
+        `Telefone: ${formData.telefone}\n` +
+        `Email: ${formData.email}\n\n` +
+        `Cidade: ${formData.cidade}\n` +
+        `Bairro: ${formData.bairro}\n` +
+        `Orçamento para: ${tipoTexto}\n` +
+        `Motor ideal: ${motorTexto[formData.motor as keyof typeof motorTexto]}`
       );
 
       window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');

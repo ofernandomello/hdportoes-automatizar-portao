@@ -1,7 +1,9 @@
 import { Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useWhatsAppDialog } from "@/hooks/use-whatsapp-dialog";
 
 const Testimonials = () => {
+  const { openDialog } = useWhatsAppDialog();
   const whatsappNumber = "5511921349917";
   const whatsappMessage = encodeURIComponent("Olá! Vi os depoimentos e quero automatizar meu portão com Motor PPA.");
   const whatsappLink = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
@@ -91,7 +93,7 @@ const Testimonials = () => {
           <Button 
             size="lg"
             className="bg-primary hover:bg-primary/90 text-primary-foreground font-montserrat font-semibold text-lg px-12 py-6 rounded-xl shadow-[0_20px_50px_-10px_hsl(142_76%_36%/0.4)] transition-all hover:scale-105"
-            onClick={() => window.open(whatsappLink, '_blank')}
+            onClick={openDialog}
           >
             Quero Esse Resultado
           </Button>

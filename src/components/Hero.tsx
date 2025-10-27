@@ -53,15 +53,14 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center px-4">
             <Button 
               size="lg" 
-              className="w-full sm:w-auto bg-gradient-to-r from-primary to-yellow-400 hover:from-primary/90 hover:to-yellow-400/90 text-foreground font-montserrat font-black text-sm sm:text-base md:text-lg lg:text-xl px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-5 md:py-6 lg:py-7 rounded-xl shadow-[0_8px_30px_hsl(24_100%_50%/0.6)] hover:shadow-[0_12px_40px_hsl(24_100%_50%/0.8)] transition-all border-2 border-foreground/20 animate-pulse" 
+              className="w-full sm:w-auto bg-gradient-to-r from-primary to-yellow-400 hover:from-primary/90 hover:to-yellow-400/90 text-foreground font-montserrat font-black text-sm sm:text-base md:text-lg lg:text-xl px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-5 md:py-6 lg:py-7 rounded-xl shadow-[0_8px_30px_hsl(24_100%_50%/0.6)] hover:shadow-[0_12px_40px_hsl(24_100%_50%/0.8)] transition-all border-2 border-foreground/20" 
               onClick={openDialog}
             >
               🔥 AUTOMATIZAR MEU PORTÃO 🔥
             </Button>
             
-            <Button size="lg" variant="outline" className="w-full sm:w-auto bg-background hover:bg-background/90 text-foreground border-2 border-primary font-montserrat font-bold text-sm sm:text-base md:text-lg px-4 sm:px-5 md:px-6 lg:px-8 py-4 sm:py-5 md:py-6 rounded-xl transition-all hover:scale-105" onClick={() => document.getElementById('motores')?.scrollIntoView({
-            behavior: 'smooth'
-          })}>
+            <Button size="lg" variant="outline" className="w-full sm:w-auto bg-background text-foreground border-2 border-primary font-montserrat font-bold text-sm sm:text-base md:text-lg px-4 sm:px-5 md:px-6 lg:px-8 py-4 sm:py-5 md:py-6 rounded-xl transition-all hover:scale-105"
+            onClick={() => document.getElementById('motores')?.scrollIntoView({behavior: 'smooth'})}>
               Ver Modelos
             </Button>
           </div>

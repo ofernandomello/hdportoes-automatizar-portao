@@ -88,7 +88,7 @@ const Motors = () => {
 
                     <div className="text-center">
                       <Button
-                        onClick={handleWhatsApp}
+                        actionKey="contatoWhatsApp"
                         className="w-full bg-gradient-to-r from-yellow-400 to-primary hover:from-yellow-500 hover:to-primary/90 px-2 sm:px-3 md:px-4 py-1.5 sm:py-2 rounded-lg border-2 border-foreground/20 shadow-lg transition-all hover:scale-105"
                       >
                         <div className="font-montserrat text-xs sm:text-sm md:text-base lg:text-xl font-black text-foreground leading-tight">
@@ -114,7 +114,7 @@ const Motors = () => {
             </p>
             <Button 
               className="w-full max-w-md mx-auto bg-primary hover:bg-primary/90 text-primary-foreground font-montserrat font-black text-xs sm:text-sm md:text-base px-4 py-4 md:py-6 rounded-xl shadow-lg transition-all hover:scale-105 border-2 border-primary"
-              onClick={openDialog}
+              actionKey="contatoWhatsApp"
             >
               Quero ajuda para escolher
             </Button>

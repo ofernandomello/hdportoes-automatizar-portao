@@ -48,8 +48,11 @@ const AntiTheftLock = () => {
             })}
             </div>
 
-            <Button size="lg" className="w-full lg:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-montserrat font-black text-base md:text-xl px-8 py-6 md:py-7 rounded-xl shadow-lg transition-all hover:scale-105 border-2 border-primary"
-            onClick={openDialog}>📞 ADICIONAR TRAVA AO ORÇAMENTO</Button>
+            <Button
+              actionKey="contatoWhatsApp"
+              size="lg"
+              className="w-full lg:w-auto bg-primary hover:bg-primary/90 text-primary-foreground font-montserrat font-black text-base md:text-xl px-8 py-6 md:py-7 rounded-xl shadow-lg transition-all hover:scale-105 border-2 border-primary"
+            >📞 ADICIONAR TRAVA AO ORÇAMENTO</Button>
           </div>
 
           {/* Visual */}

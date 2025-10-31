@@ -20,7 +20,7 @@ const Footer = () => {
             <Button 
               size="lg"
               className="bg-primary hover:bg-primary/90 text-primary-foreground font-montserrat font-semibold text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-12 py-5 md:py-6 rounded-xl shadow-[0_20px_50px_-10px_hsl(142_76%_36%/0.4)] transition-all hover:scale-105"
-              onClick={openDialog}
+              actionKey="contatoWhatsApp"
             >
               <Phone className="mr-2 h-4 w-4 md:h-5 md:w-5" />
               <span className="hidden sm:inline">Solicitar Orçamento Personalizado</span>
@@ -39,13 +39,19 @@ const Footer = () => {
               Contato
             </h3>
             <div className="space-y-3">
-              <button 
+              <Button
+              variant="default" 
+              actionKey="contatoWhatsApp"
+            ><Phone className="h-5 w-5" />
+                <span>(11) 92134-9917</span>
+            </Button>
+              {/* <button 
                 onClick={openDialog}
                 className="flex items-center gap-3 text-background/80 hover:text-primary transition-colors cursor-pointer"
               >
                 <Phone className="h-5 w-5" />
                 <span>(11) 92134-9917</span>
-              </button>
+              </button> */}
               <a 
                 href="mailto:comercial.grupohd@gmail.com"
                 className="flex items-center gap-3 text-background/80 hover:text-primary transition-colors"

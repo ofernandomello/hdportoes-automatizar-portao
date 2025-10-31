@@ -27,7 +27,7 @@ const Index = () => {
       <AntiTheftLock />
       <Testimonials />
       <FAQ />
-      <ContactForm />
+      {/* <ContactForm /> */}
       <Footer />
       <WhatsAppButton />
     </div>

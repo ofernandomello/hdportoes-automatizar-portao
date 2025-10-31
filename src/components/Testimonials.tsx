@@ -93,7 +93,7 @@ const Testimonials = () => {
           <Button 
             size="lg"
             className="bg-primary hover:bg-primary/90 text-primary-foreground font-montserrat font-semibold text-lg px-12 py-6 rounded-xl shadow-[0_20px_50px_-10px_hsl(142_76%_36%/0.4)] transition-all hover:scale-105"
-            onClick={openDialog}
+            actionKey="contatoWhatsApp"
           >
             Quero Esse Resultado
           </Button>

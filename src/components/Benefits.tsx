@@ -83,7 +83,7 @@ const Benefits = () => {
           <Button 
             size="lg"
             className="whitespace-normal bg-primary hover:bg-primary/90 text-primary-foreground font-montserrat font-black text-base md:text-xl px-8 md:px-12 py-6 md:py-7 rounded-xl shadow-lg hover:scale-105 transition-all border-2 border-primary"
-            onClick={openDialog}
+            actionKey="contatoWhatsApp"
           >
             📞 AUTOMATIZAR MEU PORTÃO AGORA
           </Button>

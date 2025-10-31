@@ -3,6 +3,8 @@ import { Slot } from "@radix-ui/react-slot";
 import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
+import { buttonActions } from "@/config/buttonConfig";
+import { useWhatsAppDialog } from "@/hooks/use-whatsapp-dialog";
 
 const buttonVariants = cva(
   "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
@@ -34,12 +36,52 @@ export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   asChild?: boolean;
+  actionKey?: keyof typeof buttonActions;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : "button";
-    return <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} />;
+  ({ className, variant, size, asChild = false, actionKey, onClick, ...props }, ref) => {
+  const Comp = asChild ? Slot : "button";
+  const { openDialog: openWhatsAppDialog } = useWhatsAppDialog();
+
+    // Função de clique que interpreta a configuração, se actionKey estiver definido
+    const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+      if (actionKey) {
+        const action = buttonActions[actionKey];
+
+        // Dispara evento GTM
+        window.dataLayer = window.dataLayer || [];
+        window.dataLayer.push({
+          event: "button_click",
+          actionKey,
+        });
+
+        // Executa ação (usando checagens por propriedade para satisfazer o TS)
+        if (action.type === "link" && "url" in action) {
+          window.open(action.url, "_blank");
+        } else if (action.type === "dialog") {
+          // Abrir o diálogo de WhatsApp via Zustand store hook
+          // Observação: aqui assumimos que diálogos de tipo "dialog" mapeiam para o WhatsApp dialog
+          // Se houver múltiplos diálogos diferentes no futuro, considere usar action.dialogId para rotear.
+          openWhatsAppDialog();
+        } else if (action.type === "custom" && "callback" in action && action.callback) {
+          action.callback();
+        }
+      }
+
+      // Chama onClick padrão se houver
+      if (onClick) onClick(e);
+    };
+
+    // Anexa o handler que interpreta `actionKey` e preserva o `onClick` original.
+    return (
+      <Comp
+        className={cn(buttonVariants({ variant, size, className }))}
+        ref={ref}
+        onClick={handleClick}
+        {...props}
+      />
+    );
   },
 );
 Button.displayName = "Button";

@@ -10,7 +10,7 @@ if (utm.gclid) {
 }
 
 const whatsappNumber = "5511921349917";
-const whatsappMessage = "Olá, vim do site e estou buscando orçamento para automatizar meu portão.";
+const whatsappMessage = "Oi, gostaria de mais informações para automatizar meu portão";
 // Codificar a mensagem inteira (tag + texto) para o parâmetro `text`
 const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(tagAnuncio + whatsappMessage)}`;
 

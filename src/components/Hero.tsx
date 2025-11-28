@@ -28,9 +28,8 @@ const Hero = () => {
             </div>
           </div>
           
-          <h1 className="font-montserrat text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black text-foreground mb-4 md:mb-6 leading-tight px-4 drop-shadow-lg">
-            Motor Ultra Rápido PPA<br />
-            Pagamento Após a Instalação
+          <h1 className="font-montserrat text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-black text-foreground mb-4 md:mb-6 leading-tight px-4 drop-shadow-lg">
+            Automatizamos seu portão<br/> para abrir em 4 segundos
           </h1>
 
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-foreground font-semibold mb-6 md:mb-8 leading-relaxed px-4 max-w-3xl mx-auto bg-background/90 py-3 md:py-4 rounded-lg">

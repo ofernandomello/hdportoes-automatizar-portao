@@ -1,10 +1,24 @@
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import heroGate from "@/assets/hero-gate.jpg";
-import { useWhatsAppDialog } from "@/hooks/use-whatsapp-dialog";
+// Removido: import { useWhatsAppDialog } from "@/hooks/use-whatsapp-dialog";
 
 const Hero = () => {
-  const { openDialog } = useWhatsAppDialog();
+  // Removido: const { openDialog } = useWhatsAppDialog();
+
+  // 1. ADICIONE ESTA FUNÇÃO AQUI
+  const abrirFormularioKommo = () => {
+    // Esta função verifica se o formulário do Kommo está pronto e o abre
+    if (window.amo_forms_loaded) {
+      window.amo_forms_loaded("show");
+    } else {
+      // Se não estiver pronto, ela espera e tenta novamente
+      window.amo_forms_load = window.amo_forms_load || [];
+      window.amo_forms_load.f = window.amo_forms_load.f || [];
+      window.amo_forms_load.f.push(["show"]);
+    }
+  };
+
   return <section className="relative min-h-[600px] md:min-h-[700px] lg:min-h-[800px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary/10 via-background to-yellow-400/10">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" style={{
@@ -29,7 +43,8 @@ const Hero = () => {
           </div>
           
           <h1 className="font-montserrat text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-black text-foreground mb-4 md:mb-6 leading-tight px-4 drop-shadow-lg">
-            Automatizamos seu portão<br/> para abrir em 4 segundos
+            Automatizamos seu portão  
+ para abrir em 4 segundos
           </h1>
 
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-foreground font-semibold mb-6 md:mb-8 leading-relaxed px-4 max-w-3xl mx-auto bg-background/90 py-3 md:py-4 rounded-lg">
@@ -50,10 +65,11 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center px-4">
+            {/* 2. MODIFIQUE ESTE BOTÃO */}
             <Button 
               size="lg" 
               className="w-full sm:w-auto bg-gradient-to-r from-primary to-yellow-400 hover:from-primary/90 hover:to-yellow-400/90 text-foreground font-montserrat font-black text-sm sm:text-base md:text-lg lg:text-xl px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-5 md:py-6 lg:py-7 rounded-xl shadow-[0_8px_30px_hsl(24_100%_50%/0.6)] hover:shadow-[0_12px_40px_hsl(24_100%_50%/0.8)] transition-all border-2 border-foreground/20" 
-              actionKey="contatoWhatsApp"
+              onClick={abrirFormularioKommo} // <-- A MÁGICA ACONTECE AQUI
             >🔥 AUTOMATIZAR MEU PORTÃO 🔥
             </Button>
             
@@ -66,6 +82,8 @@ const Hero = () => {
       </div>
     </section>;
 };
+
+// O restante do arquivo permanece o mesmo
 const VideoSection = () => {
   return <section className="py-16 bg-background">
       <div className="container mx-auto px-4">

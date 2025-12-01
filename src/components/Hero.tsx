@@ -1,39 +1,23 @@
+// Arquivo: src/componentes/Hero.tsx
+
 import { Button } from "@/components/ui/button";
 import { Check } from "lucide-react";
 import heroGate from "@/assets/hero-gate.jpg";
-// Removido: import { useWhatsAppDialog } from "@/hooks/use-whatsapp-dialog";
+import { useKommoForm } from "@/ganchos/use-kommo-form"; // 1. IMPORTAR O NOSSO NOVO HOOK
 
 const Hero = () => {
-  // Removido: const { openDialog } = useWhatsAppDialog();
-
-  // 1. ADICIONE ESTA FUNÇÃO AQUI
-  const abrirFormularioKommo = () => {
-    // Esta função verifica se o formulário do Kommo está pronto e o abre
-    if (window.amo_forms_loaded) {
-      window.amo_forms_loaded("show");
-    } else {
-      // Se não estiver pronto, ela espera e tenta novamente
-      window.amo_forms_load = window.amo_forms_load || [];
-      window.amo_forms_load.f = window.amo_forms_load.f || [];
-      window.amo_forms_load.f.push(["show"]);
-    }
-  };
+  const { openForm } = useKommoForm(); // 2. USAR O HOOK PARA PEGAR A FUNÇÃO
 
   return <section className="relative min-h-[600px] md:min-h-[700px] lg:min-h-[800px] flex items-center justify-center overflow-hidden bg-gradient-to-br from-primary/10 via-background to-yellow-400/10">
-      {/* Background Image with Overlay */}
+      {/* ... (todo o resto do seu código de imagem e texto continua igual) ... */}
       <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" style={{
       backgroundImage: `url(${heroGate})`
     }} />
-      
-      {/* Diagonal stripes pattern for factory feel */}
       <div className="absolute inset-0 opacity-5" style={{
       backgroundImage: 'repeating-linear-gradient(45deg, hsl(var(--primary)) 0px, hsl(var(--primary)) 2px, transparent 2px, transparent 10px)'
     }} />
-
-      {/* Content */}
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
-          {/* Factory Direct Badge */}
           <div className="inline-block mb-4 md:mb-6 px-2">
             <div className="bg-yellow-400 text-foreground px-3 sm:px-4 md:px-6 lg:px-8 py-2 md:py-3 rounded-lg shadow-[0_4px_15px_hsl(24_100%_50%/0.4)] border-2 border-primary">
               <p className="font-montserrat font-black text-sm sm:text-base md:text-xl lg:text-2xl xl:text-3xl uppercase tracking-wide">
@@ -41,17 +25,13 @@ const Hero = () => {
               </p>
             </div>
           </div>
-          
           <h1 className="font-montserrat text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-5xl font-black text-foreground mb-4 md:mb-6 leading-tight px-4 drop-shadow-lg">
             Automatizamos seu portão  
  para abrir em 4 segundos
           </h1>
-
           <p className="text-sm sm:text-base md:text-lg lg:text-xl text-foreground font-semibold mb-6 md:mb-8 leading-relaxed px-4 max-w-3xl mx-auto bg-background/90 py-3 md:py-4 rounded-lg">
             Cada segundo parado na rua é um risco. O PPA JetFlex Ultra Rápido abre rápido, protege sua família e traz a tranquilidade que você merece ao chegar em casa.
           </p>
-
-          {/* Benefits List */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 md:gap-4 mb-6 md:mb-8 lg:mb-10 max-w-2xl mx-auto px-4">
             {["Abertura em apenas 4 segundos", "Controle anti-clonagem", "Instalador especializado PPA", "Pagamento no cartão após a instalação"].map((benefit, index) => <div key={index} className="flex items-center gap-2 md:gap-3 text-left bg-background border-2 border-primary p-2 sm:p-3 md:p-4 rounded-lg shadow-md hover:shadow-lg transition-all">
                 <div className="bg-primary rounded-full p-1">
@@ -62,14 +42,14 @@ const Hero = () => {
                 </span>
               </div>)}
           </div>
+          {/* Fim do conteúdo que não muda */}
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center items-center px-4">
-            {/* 2. MODIFIQUE ESTE BOTÃO */}
             <Button 
               size="lg" 
               className="w-full sm:w-auto bg-gradient-to-r from-primary to-yellow-400 hover:from-primary/90 hover:to-yellow-400/90 text-foreground font-montserrat font-black text-sm sm:text-base md:text-lg lg:text-xl px-4 sm:px-6 md:px-8 lg:px-12 py-4 sm:py-5 md:py-6 lg:py-7 rounded-xl shadow-[0_8px_30px_hsl(24_100%_50%/0.6)] hover:shadow-[0_12px_40px_hsl(24_100%_50%/0.8)] transition-all border-2 border-foreground/20" 
-              onClick={abrirFormularioKommo} // <-- A MÁGICA ACONTECE AQUI
+              onClick={openForm} // 3. USAR A FUNÇÃO DO HOOK NO ONCLICK
             >🔥 AUTOMATIZAR MEU PORTÃO 🔥
             </Button>
             
@@ -85,6 +65,7 @@ const Hero = () => {
 
 // O restante do arquivo permanece o mesmo
 const VideoSection = () => {
+  // ... (código da VideoSection inalterado)
   return <section className="py-16 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-4xl mx-auto">

@@ -3,7 +3,7 @@ import { Badge } from "@/components/ui/badge";
 
 const Header = () => {
   return (
-    <header className="bg-gradient-to-r from-yellow-400 via-primary to-yellow-400 border-b-4 border-foreground sticky top-0 z-50 shadow-lg">
+    <header className="bg-gradient-to-r from-yellow-400 via-primary to-yellow-400 border-b-4 border-foreground sticky top-0 z-[20000] shadow-lg">
       <div className="container mx-auto px-4 py-2 md:py-3">
         <div className="flex items-center justify-between gap-4">
           <div className="flex items-center gap-3 md:gap-4">

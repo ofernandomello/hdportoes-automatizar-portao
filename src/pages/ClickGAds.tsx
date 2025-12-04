@@ -10,8 +10,12 @@ import ContactForm from "@/components/ContactForm";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { pushGeoLocationData } from "@/lib/gtm";
+import { useCanonical } from "@/hooks/use-canonical";
 
-const Index = () => {
+const ClickGAds = () => {
+
+    useCanonical();
+
   useEffect(() => {
     // Envia dados de geolocalização ao GTM após carregamento da página
     pushGeoLocationData();
@@ -34,4 +38,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default ClickGAds;

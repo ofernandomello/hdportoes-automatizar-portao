@@ -39,7 +39,7 @@ const Benefits = () => {
   ];
 
   return (
-    <section className="py-20 pb-0 bg-gradient-to-br from-yellow-400/20 via-background to-primary/10">
+    <section className="py-20 pb-20 bg-gradient-to-br from-yellow-400/20 via-background to-primary/10">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12 md:mb-16">
           <div className="inline-block bg-primary text-primary-foreground px-6 py-2 rounded-lg mb-4 shadow-lg">
